@@ -4728,7 +4728,27 @@ button.footer-link:hover::after {
     .kr8-col-right {
         display: flex !important;
         flex-direction: column !important;
-        width: 100% !important;
+        background: transparent !important;
+    }
+    
+    /* Make left column in before/after section white on mobile for index page */
+    body.index .kr8-before-after-module .kr8-col-left {
+        background: #ffffff !important;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Style for the before/after description text on mobile */
+    @media (max-width: 768px) {
+        .before-after-desc {
+            text-align: center !important;
+            padding: 0 10px !important;
+            margin: 0 auto !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            box-sizing: border-box;
+        }
     }
     
     /* Ensure images always appear first on mobile */
@@ -6310,64 +6330,138 @@ button.footer-link:hover::after {
     }
     
     /* Before/After Module - Mobile Fixes */
+    .kr8-before-after-module::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2.5vh !important;
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%) !important;
+        z-index: 1;
+        pointer-events: none;
+        display: block !important;
+    }
+    .kr8-before-after-module::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2.5vh !important;
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%) !important;
+        z-index: 1;
+        pointer-events: none;
+        display: block !important;
+    }
+    
+    /* ===========================================
+       MOBILE BEFORE/AFTER MODULE - CLEAN LAYOUT
+       =========================================== */
+    .kr8-before-after-module {
+        background: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Remove gradients on mobile */
     .kr8-before-after-module::before,
     .kr8-before-after-module::after {
         display: none !important;
     }
     
-        
+    /* Main intro section */
     .kr8-before-after-module .kr8-ba-main-intro {
-        margin-bottom: 0 !important;
-        padding: 10px !important;
-    }
-    
-    .kr8-before-after-module .kr8-ba-container {
-        background-color: transparent !important;
-    }
-    
-    .kr8-before-after-module .kr8-ba-container {
-        background-color: transparent !important;
-    }
-    
-    .kr8-before-after-module .kr8-ba-container {
-        background-color: transparent !important;
+        background: #ffffff !important;
+        padding: 30px 20px !important;
+        margin: 0 !important;
+        text-align: center !important;
     }
     
     .kr8-before-after-module .kr8-main-headline {
+        color: #000 !important;
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        margin: 0 0 15px 0 !important;
         text-align: center !important;
-        color: #000000 !important;
-        padding: 10px !important;
+        text-shadow: none !important;
     }
     
     .kr8-before-after-module .kr8-main-subtext {
-        text-align: left !important;
-        color: #000000 !important;
-        padding: 10px !important;
-        padding-left: 4px !important;
-        line-height: 1 !important;
+        color: #555 !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        text-align: center !important;
+        text-shadow: none !important;
     }
     
+    /* Container for before/after items */
+    .kr8-before-after-module .kr8-ba-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+        padding: 0 20px 40px 20px !important;
+        background: #ffffff !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Individual before/after cards */
+    .kr8-before-after-module .kr8-col-left,
+    .kr8-before-after-module .kr8-col-right {
+        width: 100% !important;
+        background: #ffffff !important;
+        padding: 20px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+        margin: 0 !important;
+    }
+    
+    /* Section headers */
     .kr8-before-after-module .kr8-ba-header {
+        display: flex !important;
+        align-items: center !important;
         justify-content: center !important;
+        margin-bottom: 20px !important;
+        gap: 10px !important;
     }
     
     .kr8-before-after-module .kr8-section-title {
+        color: #000 !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
         text-align: center !important;
-        color: white !important;
-        padding: 10px !important;
+        padding: 0 !important;
     }
     
     .kr8-before-after-module .kr8-arrow-icon {
         display: none !important;
     }
     
-    .kr8-before-after-module .kr8-label {
-        color: white !important;
+    /* Split frame - consistent 1:1 aspect ratio */
+    .kr8-before-after-module .kr8-split-frame {
+        width: 100% !important;
+        aspect-ratio: 1/1 !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+        position: relative !important;
     }
     
-    .kr8-before-after-module .kr8-split-frame {
-        width: 78.4% !important;
-        margin: 0 auto !important;
+    /* Labels inside frames */
+    .kr8-before-after-module .kr8-label {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 8px 14px !important;
+        background: rgba(0,0,0,0.75) !important;
+        color: #fff !important;
+        border-radius: 6px !important;
+        margin: 15px !important;
+        letter-spacing: 0.5px !important;
     }
     
     /* Editorial Section Below Before/After */
@@ -6414,12 +6508,14 @@ button.footer-link:hover::after {
         transform: scale(1.33) !important;
     }
     
-    .footer-col a[href="tel:654-8987"] {
+    /* Left-align phone number in footer */
+    .footer-col a[href="tel:7809155471"] {
         text-align: left !important;
         display: block !important;
         padding-left: 0 !important;
         gap: 0 !important;
         margin-left: 0 !important;
+        align-self: flex-start !important;
     }
     
     /* Marquee Mobile Fixes */
@@ -6428,7 +6524,7 @@ button.footer-link:hover::after {
     }
     
     .kr8-marquee-wrapper::after {
-        height: 5vh !important;
+        height: 2.5vh !important;
         background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%) !important;
     }
 
@@ -6571,7 +6667,7 @@ button.footer-link:hover::after {
     }
     
     body.index .kr8-external-actions-container .kr8-ext-btn:last-child {
-        margin-bottom: 5px !important;
+        margin-bottom: 15px !important;
     }
     
     /* Index page only: Add 10px padding to text under Industrial Power title */
