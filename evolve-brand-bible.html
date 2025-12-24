@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVOLVE ECO SURFACE PREP &amp; RESTORATION | Brand Bible</title>
+
+<meta name="description" content="The official EVOLVE ECO SURFACE PREP & RESTORATION brand bible covering identity, design system, and visual standards.">
+<meta property="og:title" content="EVOLVE ECO SURFACE PREP & RESTORATION | Brand Bible">
+<meta property="og:description" content="The official EVOLVE ECO SURFACE PREP & RESTORATION brand bible covering identity, design system, and visual standards.">
+<meta property="og:image" content="https://www.evolution.contractors/images/logos/evolvelogo.webp">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.evolution.contractors/evolve-brand-bible.html">
+<link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
+<link rel="icon" type="image/webp" href="images/logos/evolvelogo.webp">
+
+<style>
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('assets/fonts/NeueMontreal-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('assets/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --boreal-void: #0a0a0a;
+    --bg-dark: #050505;
+    --aurora-neon: #4ade80;
+    --cyber-lime: #39ff14;
+    --alloy-silver: #f3f4f6;
+    --alloy-dim: #9ca3af;
+    --glass: rgba(5, 5, 5, 0.85);
+    --border-dim: rgba(255, 255, 255, 0.1);
+    --border-bright: rgba(255, 255, 255, 0.24);
+    --shadow-glow: 0 0 30px rgba(57, 255, 20, 0.25);
+    --font-main: 'Neue Montreal', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: radial-gradient(circle at top, rgba(10, 10, 10, 0.92), #030303 60%),
+                linear-gradient(120deg, rgba(74, 222, 128, 0.08), rgba(0, 0, 0, 0));
+    color: var(--alloy-silver);
+    font-family: var(--font-main);
+    line-height: 1.6;
+  }
+
+  .anchor-profile {
+    position: fixed;
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 2;
+    background-image: url('videos/noise.webp');
+    mix-blend-mode: soft-light;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background: var(--glass);
+    border-bottom: 1px solid var(--border-dim);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px 24px;
+  }
+
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .brand-mark img {
+    width: 64px;
+    height: auto;
+  }
+
+  .brand-mark strong {
+    display: block;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--alloy-dim);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--alloy-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .btn {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 22px;
+    min-height: 44px;
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary {
+    background-color: #39ff14;
+    color: #000000;
+    border-color: #39ff14;
+    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn:not(.btn-primary):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-primary:hover {
+    background-color: #00ff41;
+    border-color: #00ff41;
+    color: #000000;
+    box-shadow: 0 6px 20px rgba(57, 255, 20, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  main {
+    position: relative;
+    z-index: 5;
+  }
+
+  .section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 24px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-panel {
+    background: rgba(8, 8, 8, 0.86);
+    border: 1px solid var(--border-dim);
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .hero-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+    max-width: 520px;
+  }
+
+  .hero-actions-grid .btn {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin: 12px 0 16px;
+  }
+
+  .hero-title span {
+    color: var(--aurora-neon);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--alloy-dim);
+    margin-bottom: 24px;
+  }
+
+  .hero-media {
+    display: grid;
+    gap: 16px;
+  }
+
+  .logo-panel {
+    border-radius: 20px;
+    border: 1px solid var(--border-dim);
+    padding: 24px;
+    background: rgba(9, 9, 9, 0.9);
+    text-align: center;
+  }
+
+  .logo-panel img {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+  }
+
+  .hero-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 260px;
+    border: 1px solid var(--border-dim);
+    background: url('images/backgrounds/background1.webp') center/cover no-repeat;
+  }
+
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(130deg, rgba(5, 5, 5, 0.65), rgba(5, 5, 5, 0.1));
+  }
+
+  .hero-image-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    z-index: 1;
+  }
+
+  .hero-image-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--alloy-silver);
+  }
+
+  .toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .toc a {
+    text-decoration: none;
+    color: var(--alloy-silver);
+    border: 1px solid var(--border-dim);
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(8, 8, 8, 0.6);
+    display: block;
+  }
+
+  .toc span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--alloy-dim);
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--alloy-dim);
+    margin: 0 0 12px;
+  }
+
+  h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--alloy-dim);
+    margin: 16px 0 8px;
+  }
+
+  .stack {
+    display: grid;
+    gap: 16px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: rgba(8, 8, 8, 0.75);
+    border: 1px solid var(--border-dim);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .card strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .callout {
+    border-left: 3px solid var(--aurora-neon);
+    padding-left: 16px;
+    color: var(--aurora-neon);
+    font-weight: 500;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .pillar {
+    border: 1px solid var(--border-bright);
+    border-radius: 16px;
+    padding: 20px;
+    background: linear-gradient(140deg, rgba(57, 255, 20, 0.06), rgba(10, 10, 10, 0.85));
+  }
+
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .swatch {
+    border-radius: 14px;
+    border: 1px solid var(--border-dim);
+    padding: 16px;
+    background: rgba(6, 6, 6, 0.8);
+  }
+
+  .swatch-color {
+    height: 120px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .type-sample {
+    border-left: 1px solid var(--border-dim);
+    padding-left: 20px;
+  }
+
+  .type-sample h1 {
+    margin: 0 0 8px;
+    font-size: 3rem;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+  }
+
+  .dialects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .dialect {
+    border: 1px solid var(--border-dim);
+    border-radius: 16px;
+    padding: 20px;
+    background: rgba(10, 10, 10, 0.75);
+  }
+
+  .rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .rules ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .imagery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .imagery-grid img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border-dim);
+    display: block;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border-dim);
+  }
+
+  .gallery.icons {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .gallery.icons img {
+    height: 170px;
+    object-fit: contain;
+    padding: 16px;
+    background: #0b0b0b;
+  }
+
+  .token-block {
+    background: #0d0d0d;
+    border-radius: 16px;
+    border: 1px solid var(--border-dim);
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--alloy-dim);
+    overflow-x: auto;
+  }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .impact {
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: 16px;
+    padding: 18px;
+    background: rgba(9, 9, 9, 0.9);
+  }
+
+  footer {
+    padding: 48px 24px 80px;
+    text-align: center;
+    color: var(--alloy-dim);
+  }
+
+  @media (max-width: 960px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    .header-inner {
+      grid-template-columns: 1fr;
+    }
+    .actions {
+      justify-content: flex-start;
+    }
+    .hero-actions-grid {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+    }
+    .hero-image {
+      min-height: 220px;
+    }
+  }
+
+  @media print {
+    header,
+    .anchor-profile,
+    .actions {
+      display: none;
+    }
+    body {
+      background: #0a0a0a;
+      color: #f3f4f6;
+    }
+    .section {
+      padding: 36px 0;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="anchor-profile" aria-hidden="true"></div>
+  <header>
+    <div class="header-inner">
+      <div class="brand-mark">
+        <img src="images/logos/evolvelogo.webp" alt="Evolve logo">
+        <div>
+          <div class="mono">Brand Bible v3.0</div>
+          <strong>EVOLVE ECO SURFACE PREP &amp; RESTORATION</strong>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="index.html">Back to Main Site</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero" id="overview">
+      <div class="hero-panel">
+        <div class="mono">Identity, Narrative &amp; Design System</div>
+        <div class="hero-actions-grid">
+          <a class="btn btn-primary" href="evolve-brand-bible.html" download>Download Brand Bible</a>
+          <a class="btn" href="images/logos/evolvelogo.webp" download>Download Logo</a>
+          <a class="btn" href="videos/noise.webp" download>Download Noise Overlay</a>
+          <a class="btn" href="index.html">Back to Main Site</a>
+        </div>
+        <h1 class="hero-title">Precision. Preservation. <span>Performance.</span></h1>
+        <p class="hero-subtitle">
+          This brand bible is the signal system for EVOLVE ECO SURFACE PREP &amp; RESTORATION. It unifies story, visual
+          identity, and the psychology that converts decision makers into committed clients.
+        </p>
+      </div>
+      <div class="hero-media">
+        <div class="logo-panel">
+          <img src="images/logos/evolvelogo.webp" alt="Evolve logo mark">
+          <div class="mono">Primary Mark</div>
+          <p>Use the full lockup on dark backgrounds. Maintain clear space equal to the height of the tree symbol.</p>
+        </div>
+        <div class="hero-image" aria-label="Backcountry cyberpunk atmosphere">
+          <div class="hero-image-content">
+            <p>Backcountry Cyberpunk</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="toc">
+      <h2>Brand Bible Index</h2>
+      <div class="toc">
+        <a href="#manifesto"><span>01</span>Part 1: The Brand Manifesto</a>
+        <a href="#visual-identity"><span>02</span>Part 2: Visual Identity (Decoded)</a>
+        <a href="#color"><span>03</span>Part 3: Color Physics &amp; Psychology</a>
+        <a href="#texture"><span>04</span>Part 4: Texture &amp; Atmosphere</a>
+        <a href="#type"><span>05</span>Part 5: Typography &amp; Text Rules</a>
+        <a href="#merch"><span>06</span>Part 6: Merch Strategy</a>
+        <a href="#audience"><span>07</span>Part 7: Audience Translation</a>
+        <a href="#imagery"><span>08</span>Imagery Companion Guide</a>
+        <a href="#psychology"><span>09</span>Psychology &amp; Beneficial Impact</a>
+      </div>
+    </section>
+
+    <section class="section" id="manifesto">
+      <h2>Part 1: The Brand Manifesto</h2>
+      <div class="stack">
+        <div class="card">
+          <h3>1.1 The Origin: "The Oddly Aesthetic and Mysterious Tree-Lined Metallic E on the Coffee Mug"</h3>
+          <p>The industrial landscape is littered with terrible logos. It is a sea of clip-art rooftops, screaming cartoons, and generic gears designed to be legible on a dirty van doing 60mph. This is "Corporate Noise." The assumption is that if you work with your hands, you do not care about aesthetics. We reject that. Just because the work is hard does not mean it has to be ugly. People want to go to work and be happy; they do not want to stare at ugliness all day.</p>
+          <p>EVOLVE is the Signal. Our emblem is the oddly aesthetic and mysterious tree-lined metallic E on the coffee mug. It is the unexpected object in the room that forces a question. It is designed to be worn on a matte black hoodie in a local coffee shop, not just on a safety vest on a job site.</p>
+          <p>When someone sees the Evolve logo, the Tree, the Kinetic Swish, the Metallic Sheen, they should not think "Oh, a sandblaster." They should think, "That looks like a tech startup," or "Is that a skate brand?" This curiosity is our marketing funnel.</p>
+          <p class="callout">The Question: "What is that brand?"<br>The Answer: "We are a surface strategy agency. We restore infrastructure using recycled glass."<br>The Result: A boring trade becomes a fascinating story.</p>
+        </div>
+        <div class="card">
+          <h3>1.2 The Context: The High-Tech Frontier</h3>
+          <p>We operate in Alberta, the untapped wild west. We are born and bred in this industry. We grew up in the oil patch and the Boreal forest. We respect the old way, the grit, the long hours, the handshake deals, but we are here to update the software.</p>
+          <p>Our office is the backcountry. We work on rugged job sites where the Northern Lights dance overhead and the air is crisp enough to freeze breath. We are the intersection of old industry and new tech. We bring surgical precision to the wildest landscape on earth.</p>
+        </div>
+        <div class="card">
+          <h3>1.3 The Philosophy: Industrial Rebirth</h3>
+          <p>The world is full of damaged history, rusted tanks, graffiti-covered heritage buildings, weathered fleets. The industry standard is to blast it with toxic grit, making a mess and damaging the surface.</p>
+          <p>We are the Reset Button. We represent rebirth. We strip away the layers of neglect, history, and abuse to reveal the "Day One" pristine surface underneath. We do not just clean; we evolve the object back to its original potential.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="visual-identity">
+      <h2>Part 2: The Visual Identity (Decoded)</h2>
+      <div class="stack">
+        <p>Our logo is not a stamp; it is a diagram of our philosophy. It is a piece of industrial jewelry.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>2.1 The "E" (The Engine)</h3>
+            <p>The symbol: the stylized letter E. The meaning: evolution. It represents forward motion. We do not just restore the past; we evolve the surface for the future. It stands for the technological leap from sandblasting to surface strategy.</p>
+          </div>
+          <div class="card">
+            <h3>2.2 The Tree (The Protected Core)</h3>
+            <p>The symbol: the organic tree silhouette nestled in the center. The meaning: the substrate and the environment. The paradox: heavy machinery usually destroys nature. Our logo puts the nature inside the machine. The promise: we strip the rust but save the steel. We blast the paint but save the brick. We work in the park, but we do not kill the grass.</p>
+          </div>
+          <div class="card">
+            <h3>2.3 The Kinetic Circle (The Aurora Swish)</h3>
+            <p>The symbol: the swish or circular trail that wraps around the tree. The meaning: controlled chaos. This is the blast trail. It represents the millions of recycled glass particles flying at supersonic speeds. The visual twist: the swish often glows with a gradient, representing the Aurora Borealis wrapping the rugged landscape.</p>
+          </div>
+          <div class="card">
+            <h3>2.4 The Aesthetic: "Backcountry Cyberpunk"</h3>
+            <p>We bridge two worlds: the rugged wild and high-tech sci-fi. Think Blade Runner meets The Revenant. We use neon greens, deep voids, and high-contrast metallics, but place them against a forest at night. We are the new guard, armed with lasers and recycled glass, working under the stars.</p>
+          </div>
+          <div class="card">
+            <h3>2.5 Field Application: Name + Signal</h3>
+            <p>On trucks, equipment, collateral, and uniforms, the company name stays visible and primary. Clarity matters in operational environments.</p>
+            <p>The logo is a standalone bat signal for the curious and bored in the oil patch and commercial hallways. It draws attention first, then the name closes the loop.</p>
+            <p>Merch is a gift with impact after a quick conversation with a secretary at a company we want to land a multi-million-dollar contract with.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="color">
+      <h2>Part 3: Color Physics &amp; Psychology</h2>
+      <p>Our palette supports the dark mode aesthetic. We do not use white backgrounds. We use the void to make the content glow.</p>
+      <div class="palette">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #0a0a0a;"></div>
+          <strong>Boreal Void</strong>
+          <div class="mono">#0a0a0a</div>
+          <p>This is the Alberta sky at 2:00 AM. Avoid pure black to retain premium depth.</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #4ade80; box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);"></div>
+          <strong>Aurora Neon</strong>
+          <div class="mono">#4ade80 (fallback #22c55e)</div>
+          <p>Nature's electricity. Represents bio-friendly power and active process energy.</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #f3f4f6;"></div>
+          <strong>Alloy Silver</strong>
+          <div class="mono">#f3f4f6</div>
+          <p>Primary text. Precision tone of clean steel and surgical tools.</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #9ca3af;"></div>
+          <strong>Alloy Dim</strong>
+          <div class="mono">#9ca3af</div>
+          <p>Secondary text. Oxidized metal, quiet hierarchy.</p>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #39ff14; box-shadow: 0 0 20px rgba(57, 255, 20, 0.35);"></div>
+          <strong>Cyber Lime</strong>
+          <div class="mono">#39ff14</div>
+          <p>System accents, CTA glow, and HUD-like cues.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="texture">
+      <h2>Part 4: Texture &amp; Atmosphere</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>4.1 The Digital Anchor Profile</h3>
+          <p>Our website is never perfectly flat. We use a global noise overlay that sits on top of the entire experience. This represents the blast media and simulates the microscopic cloud of particles in the air during our process.</p>
+          <p>Tactility: Pure black screens feel slippery and soulless. The grain adds grip, making the brand feel heavier and more grounded.</p>
+          <p>The anchor pattern: We blast steel to create an anchor profile so coatings can stick. This digital grain is our brand's anchor profile. It ensures the message sticks in memory.</p>
+        </div>
+        <div class="card">
+          <h3>4.2 The Backcountry Imagery</h3>
+          <p>Aspect ratio: favor 21:9 or cinematic crops. The subject: show the forest behind the wall. Show the breath in cold air. Show the truck under the stars. Highlight the contrast between rugged environment and high-tech process.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <h2>Part 5: Typography &amp; Text Rules</h2>
+      <div class="grid-2">
+        <div class="type-sample">
+          <h1>Precision. Preservation. Performance.</h1>
+          <div class="mono">Neue Montreal / Uppercase / Tight tracking</div>
+          <p>Objective: the font has no personality so the message has all the power. The type should feel tall, upright, and architectural.</p>
+        </div>
+        <div class="card">
+          <h3>5.2 Hierarchy &amp; Sizing</h3>
+          <p>H1: Uppercase, bold/heavy (700). Tight tracking. Size: 4.5rem and above.</p>
+          <p>H2: Uppercase, medium (500). Size: 2.5rem.</p>
+          <p>Body: Regular/light (300). Line height 1.6. Size: 1.125rem.</p>
+        </div>
+      </div>
+      <div class="rules" style="margin-top: 24px;">
+        <div class="card">
+          <h3>5.3 Syntax Rules</h3>
+          <ul>
+            <li>No exclamation points. Confidence does not shout.</li>
+            <li>Oxford comma is required.</li>
+            <li>Say "Substrate Profiling" instead of "Cleaning."</li>
+            <li>Say "Abrasive Blasting" instead of "Sandblasting."</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Spacing as Luxury</h3>
+          <p>We use air to convey premium positioning. Cheap brands cram text together. We let it breathe.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="merch">
+      <h2>Part 6: The Merch Strategy (Streetwear Protocol)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>6.1 The Low Key Approach</h3>
+          <p>The garment: heavyweight matte black hoodies (400gsm), oversized fit.</p>
+          <p>Front: small embroidered logo on the left chest (tone-on-tone black or silver).</p>
+          <p>Sleeve: small "EVOLVE" text near the cuff.</p>
+          <p>Back: large graphic art (the kinetic circle) using puff print for texture.</p>
+          <p><strong>Forbidden:</strong> no phone numbers, no website URLs, no list of services.</p>
+        </div>
+        <div class="card">
+          <h3>The Goal</h3>
+          <p>We are selling a lifestyle of restoration, not a billboard. We are an industrial cleaning company, but we operate with the aesthetic of an underground streetwear label. We do not do "swag." We create <strong>mementos</strong>.</p>
+          <h4>Conversation Starters</h4>
+          <p>When people see our name, they should not immediately know what we do. They should want to ask. Our gear is designed to be worn on a Saturday night, not just a Monday morning.</p>
+          <h4>The Alberta Standard</h4>
+          <p>Rugged, premium, and understated. Heavy mugs you want on your desk. Hats that break in perfectly. We deliver items people love to display, keeping Evolve front and center by choice, not obligation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="audience">
+      <h2>Part 7: Audience Translation</h2>
+      <div class="dialects">
+        <div class="dialect">
+          <h3>7.1 Target: Industrial (The Skeptic)</h3>
+          <p>Vibe: technical, brief, compliance-heavy.</p>
+          <div class="mono">"We eliminate downtime. Our recycled media creates zero spark risk and requires zero hazmat cleanup. We profile the substrate to your exact SSPC standards."</div>
+        </div>
+        <div class="dialect">
+          <h3>7.2 Target: Commercial (The Visionary)</h3>
+          <p>Vibe: aesthetic, efficient, brand-conscious.</p>
+          <div class="mono">"Your building is your billboard. Graffiti and weathering degrade your brand value. We restore the architectural finish overnight without disrupting your customers."</div>
+        </div>
+        <div class="dialect">
+          <h3>7.3 Target: Residential (The Protector)</h3>
+          <p>Vibe: gentle, respectful, trustworthy.</p>
+          <div class="mono">"We are guests in your home. We strip away the years without harming the memory. Our process is dustless, non-toxic to your pets, and safe for your garden."</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="imagery">
+      <h2>Imagery Companion Guide</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Image System Overview</h3>
+          <p>All imagery should reinforce the backcountry cyberpunk aesthetic: rugged, high-contrast scenes with visible texture, cold air, and engineered precision. Favor cinematic crops, deep shadows, and grounded environments.</p>
+          <p>Color grading: cool blacks, neutral grays, and a restrained green accent. Avoid warm orange or oversaturated blues unless tied to real lighting.</p>
+        </div>
+        <div class="card">
+          <h3>Usage Rules</h3>
+          <ul>
+            <li>Backgrounds: cinematic, abstract, and atmospheric.</li>
+            <li>Process imagery: show tools and surface detail in action.</li>
+            <li>Before/after: pair as proof, keep lighting consistent.</li>
+            <li>Residential: show care, craftsmanship, and safety.</li>
+            <li>Commercial: show scale, facade, and brand uplift.</li>
+            <li>Industrial: show risk, containment, and compliance.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Backgrounds (Atmosphere)</h3>
+        <div class="gallery">
+          <img src="images/backgrounds/background1.webp" alt="Background 1" loading="lazy">
+          <img src="images/backgrounds/background2.webp" alt="Background 2" loading="lazy">
+          <img src="images/backgrounds/background3.webp" alt="Background 3" loading="lazy">
+          <img src="images/backgrounds/background4.webp" alt="Background 4" loading="lazy">
+          <img src="images/backgrounds/background5.webp" alt="Background 5" loading="lazy">
+          <img src="images/backgrounds/industrialbackground1.webp" alt="Industrial background" loading="lazy">
+          <img src="images/backgrounds/hero-poster.webp" alt="Hero poster" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Before / After Proof</h3>
+        <div class="gallery">
+          <img src="images/beforeafter/beforeafter1.webp" alt="Before after 1" loading="lazy">
+          <img src="images/beforeafter/beforeafter2.webp" alt="Before after 2" loading="lazy">
+          <img src="images/beforeafter/beforeafter3.webp" alt="Before after 3" loading="lazy">
+          <img src="images/beforeafter/beforeafter4.webp" alt="Before after 4" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Commercial Portfolio</h3>
+        <div class="gallery">
+          <img src="images/commercial/commercial1.webp" alt="Commercial 1" loading="lazy">
+          <img src="images/commercial/commercial2.webp" alt="Commercial 2" loading="lazy">
+          <img src="images/commercial/commercial3.webp" alt="Commercial 3" loading="lazy">
+          <img src="images/commercial/cornerlog.webp" alt="Commercial corner log" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Industrial Portfolio</h3>
+        <div class="gallery">
+          <img src="images/industrial/industrial1.webp" alt="Industrial 1" loading="lazy">
+          <img src="images/industrial/industrial2.webp" alt="Industrial 2" loading="lazy">
+          <img src="images/industrial/industrial3.webp" alt="Industrial 3" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Residential Portfolio</h3>
+        <div class="gallery">
+          <img src="images/residential/residentialdecks.webp" alt="Residential decks" loading="lazy">
+          <img src="images/residential/residentialhobbiest.webp" alt="Residential hobbyist" loading="lazy">
+          <img src="images/residential/residentialmarine.webp" alt="Residential marine" loading="lazy">
+          <img src="images/residential/residentialroads.webp" alt="Residential roads" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Process and Service Detail</h3>
+        <div class="gallery">
+          <img src="images/process/process1.webp" alt="Process 1" loading="lazy">
+          <img src="images/process/process2.webp" alt="Process 2" loading="lazy">
+          <img src="images/process/process3.webp" alt="Process 3" loading="lazy">
+          <img src="images/services/process1.webp" alt="Service process 1" loading="lazy">
+          <img src="images/services/process2.webp" alt="Service process 2" loading="lazy">
+          <img src="images/services/process3.webp" alt="Service process 3" loading="lazy">
+          <img src="images/services/process4.webp" alt="Service process 4" loading="lazy">
+          <img src="images/services/process5.webp" alt="Service process 5" loading="lazy">
+          <img src="images/services/process6.webp" alt="Service process 6" loading="lazy">
+        </div>
+      </div>
+      <div class="card" style="margin-top: 24px;">
+        <h3>Iconography</h3>
+        <div class="gallery icons">
+          <img src="images/icons/1.webp" alt="Icon 1" loading="lazy">
+          <img src="images/icons/2.webp" alt="Icon 2" loading="lazy">
+          <img src="images/icons/3.webp" alt="Icon 3" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="psychology">
+      <h2>Psychology &amp; Beneficial Impact</h2>
+      <p>We are building a memorable brand people like. It brings interest and stands out in a sea of gritty, boring oilfield and construction contractors. That translates to emotional engagement, more calls, and loyalty, assuming we do a great job.</p>
+      <div class="impact-grid">
+        <div class="impact">
+          <strong>Signal Over Noise</strong>
+          <p>Unexpected aesthetics trigger curiosity and slow the scroll. This increases qualified inbound attention.</p>
+        </div>
+        <div class="impact">
+          <strong>Premium Framing</strong>
+          <p>Dark mode, disciplined typography, and glass overlays position EVOLVE as a specialist, not a commodity vendor.</p>
+        </div>
+        <div class="impact">
+          <strong>Lead Filtering</strong>
+          <p>High-end visuals repel price shoppers and attract decision makers who value quality, safety, and control.</p>
+        </div>
+        <div class="impact">
+          <strong>Trust Through Precision</strong>
+          <p>Order, structure, and kinetic cues signal compliance and competence, lowering decision friction.</p>
+        </div>
+      </div>
+      <div class="token-block" style="margin-top: 24px;">
+        :root {
+          --boreal-void: #0a0a0a;
+          --bg-dark: #050505;
+          --aurora-neon: #4ade80;
+          --cyber-lime: #39ff14;
+          --alloy-silver: #f3f4f6;
+          --alloy-dim: #9ca3af;
+          --glass: rgba(5, 5, 5, 0.85);
+          --border-dim: rgba(255, 255, 255, 0.1);
+        }
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>EVOLVE ECO SURFACE PREP &amp; RESTORATION | Brand Bible v3.0</p>
+    <p>
+      <a class="btn btn-primary" href="evolve-brand-bible.html" download>Download Brand Bible</a>
+      <a class="btn" href="images/logos/evolvelogo.webp" download>Download Logo</a>
+      <a class="btn" href="videos/noise.webp" download>Download Noise Overlay</a>
+    </p>
+  </footer>
+</body>
+</html>
