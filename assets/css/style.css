@@ -1158,8 +1158,24 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
         width: 100%;
         max-width: 100%;
         padding: 30px 24px 40px;
-        background: #000;
+        background: transparent;
         text-align: left;
+    }
+    
+    /* Add gradient overlay to hero content on mobile */
+    .home-hero-content::before,
+    .comm-hero-content::before,
+    .res-hero-text::before,
+    .ind-hero-content::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+        z-index: 5;
+        pointer-events: none;
     }
     
     /* Show intro text and buttons on mobile */
@@ -4064,6 +4080,26 @@ button.footer-link:hover::after {
 
 /* === MOBILE: Touch Targets & Accessibility === */
 @media (max-width: 768px) {
+    /* Remove header fade effects on mobile for index page */
+    .home-hero-image .header-fade-top,
+    .home-hero-image .header-fade-bottom {
+        display: none !important;
+    }
+    
+    /* Remove dark gradient overlay on WebGL for index mobile */
+    .home-hero-image::after {
+        display: none !important;
+    }
+    
+    /* Disable sticky CTA bar on mobile */
+    .sticky-cta-bar {
+        display: none !important;
+    }
+    
+    .kr8-anim-item {
+        margin-bottom: 0px !important;
+    }
+    
     /* Ensure all interactive elements meet 44x44px minimum */
     .btn-primary,
     .btn-secondary,
@@ -4225,6 +4261,11 @@ button.footer-link:hover::after {
     .hud-grid {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
+    }
+    
+    /* Set margin-top for log-grid on mobile */
+    .log-grid {
+        margin-top: 0px !important;
     }
     
     /* Timber section grid */
@@ -5325,7 +5366,7 @@ button.footer-link:hover::after {
     .kr8-opt1-subhead,
     .kr8-cta-title,
     .kr8-slogan-sub {
-        text-align: center !important;
+        text-align: left !important;
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 auto !important;
@@ -5614,8 +5655,8 @@ button.footer-link:hover::after {
     .kr8-opt1-container h1,
     .kr8-opt1-container h2,
     .kr8-opt1-container h3 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -6085,7 +6126,7 @@ button.footer-link:hover::after {
     
     /* EXCEPTION: MODERNISED SURFACE RESTORATION centered on mobile */
     .kr8-opt1-headline {
-        text-align: center !important;
+        text-align: left !important;
     }
     
     /* STANDARDIZE TITLE SIZES - Match all titles to MODERNISED SURFACE RESTORATION */
@@ -6798,7 +6839,22 @@ button.footer-link:hover::after {
         width: 100% !important;
         max-width: 100% !important;
         padding: 25px 20px 40px !important;
-        background: #000 !important;
+        background: transparent !important;
+        text-align: left !important;
+    }
+    
+    /* Override comm-hero-content padding-bottom to 20px */
+    .comm-hero-content {
+        padding: 0px 20px 20px !important;
+    }
+    
+    .ind-hero-content {
+        order: 2 !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 25px 20px 20px !important;
+        background: transparent !important;
         text-align: left !important;
     }
     
@@ -6883,7 +6939,7 @@ button.footer-link:hover::after {
     .kr8-main-subtext,
     .hero-intro-unified,
     .section-description {
-        margin-bottom: 20px !important;
+        margin-bottom: -10px !important;
         padding-bottom: 0 !important;
     }
 

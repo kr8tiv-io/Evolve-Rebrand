@@ -702,6 +702,235 @@
             .cornerlog-decor {
                 display: none;
             }
+            
+            /* Make all rows 98% width on mobile after hero section */
+            .timber-grid, .service-cards, .maintenance-grid {
+                width: 98% !important;
+                margin: 0 auto !important;
+            }
+            
+            /* Keep sections at 100% width */
+            .timber-section, .service-section, .maintenance-section {
+                width: 100% !important;
+                max-width: 100vw !important;
+            }
+            
+            /* Simplify timber section layout on mobile */
+            .timber-grid {
+                display: block !important;
+                padding: 40px 20px !important;
+            }
+            
+            .timber-copy {
+                padding: 0 !important;
+                margin: 0 0 30px 0 !important;
+                max-width: 100% !important;
+            }
+            
+            .timber-visual {
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 300px !important;
+            }
+            
+            .organic-badge {
+                margin-bottom: 15px !important;
+            }
+            
+            .timber-overlay {
+                position: relative !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                padding: 20px !important;
+                background: rgba(0,0,0,0.8) !important;
+            }
+            
+            /* Mobile styles for hud-showcase section */
+            .hud-showcase {
+                padding: 10px !important;
+            }
+            
+            .hud-showcase-inner {
+                padding: 30px !important;
+                margin: 0 auto !important;
+                max-width: 100% !important;
+            }
+            
+            .hud-content {
+                margin-bottom: 0px !important;
+            }
+            
+            .hud-grid {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                margin-bottom: 40px !important;
+            }
+            
+            .hud-feature {
+                padding: 25px !important;
+                text-align: center !important;
+            }
+            
+            .hud-pop-card {
+                flex-direction: column !important;
+                gap: 30px !important;
+                padding: 25px !important;
+            }
+            
+            .hud-pop-media {
+                height: 250px !important;
+            }
+            
+            /* Comprehensive mobile width and spacing normalization */
+            section:not(.home-hero):not(.comm-hero):not(.ind-hero):not(.res-hero), 
+            .kr8-unified-block:not(.home-hero):not(.comm-hero):not(.ind-hero):not(.res-hero), 
+            .bento-section, .bento-grid, .bento-card, 
+            .zig-zag-section, .zig-row, .zig-content, .zig-img, 
+            .timber-section, .timber-grid, .timber-copy, .timber-img-box, 
+            .hud-showcase, .hud-showcase-inner, .hud-grid, .hud-pop-card, 
+            .services-wrapper, .service-cards, 
+            .maintenance-section, .maintenance-inner, .maintenance-grid, 
+            .cta-banner, .cta-content, .cta-actions, 
+            .sector-section, .sector-row, .sector-text, .sector-media, 
+            .log-grid, .log-card, .stat-grid, .stat-card, 
+            .contract-section, .contract-inner, .engagement-grid, .eng-card, 
+            .neighborhood-video-section, .neighborhood-glass-card, 
+            .elements-section, .elements-glass-container, .elements-layout, 
+            .elements-accordion, .elements-accordion-item, 
+            .gearhead-section, .gearhead-grid, 
+            .kr8-unified-inner, .kr8-cta-section, .kr8-cta-bar, 
+            .kr8-opt1-wrapper, .kr8-opt1-container, .kr8-opt1-grid, .kr8-opt1-intel, 
+            .kr8-combo-wrapper, .kr8-single-content, 
+            .kr8-services-shell, .kr8-services-inner, .kr8-services-interface, 
+            .precision-bridge, .evolve-horizon-wrap, .eh-pin-spacer, .eh-track, 
+            .eh-intro-panel, .eh-card, .footer-section, .site-footer, 
+            .footer-inner, .footer-grid, .footer-top, .footer-bottom, .footer-col {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 10px !important;
+                margin-right: auto !important;
+                box-sizing: border-box !important;
+            }
+            
+            .timber-section, .service-section, .maintenance-section {
+                width: 100% !important;
+                max-width: 100vw !important;
+            }
+            
+            .timber-section {
+                background: #080808;
+                padding: 100px 40px 40px 40px;
+                border-bottom: 1px solid var(--border);
+                position: relative;
+                overflow: visible;
+                overflow-x: visible;
+                z-index: 1;
+            }
+            
+            section {
+                margin-top: 0 !important;
+                margin-bottom: 10px !important;
+                padding-top: 0 !important;
+                padding-bottom: 10px !important;
+            }
+            
+            section, .kr8-unified-block {
+                width: 100% !important;
+                max-width: 100vw !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            .kr8-unified-block, section {
+                width: 100% !important;
+                max-width: 100vw !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            .kr8-unified-block, .kr8-unified-inner, .kr8-opt1-wrapper, .kr8-combo-wrapper, section {
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
+            }
+            
+            .kr8-unified-block, .kr8-opt1-wrapper, .kr8-combo-wrapper, section {
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+            }
+            
+            /* Override timber section padding-top to 0px */
+            #timber.timber-section {
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+            }
+            
+            /* Ensure timber video is visible on mobile */
+            .timber-img-box {
+                display: block !important;
+                height: 300px !important;
+                min-height: 300px !important;
+                margin: 20px 0 !important;
+            }
+            
+            .timber-media {
+                height: 100% !important;
+                display: block !important;
+            }
+            
+            .timber-media video {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
+            }
+            
+            /* Specifically target the Loghome.webm video */
+            .svc-video-media.video-half-speed[src*="Loghome.webm"] {
+                display: block !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+            }
+            
+            /* Show mobile-only video on mobile */
+            .mobile-timber-video {
+                display: block !important;
+                margin: 20px 0 !important;
+            }
+            
+            /* Center text for btn-magnetic on mobile */
+            .btn-magnetic[href="#contact"] {
+                text-align: center !important;
+                text-decoration: center !important;
+                justify-content: center !important;
+                align-items: center !important;
+                display: flex !important;
+                width: 100% !important;
+            }
+            
+            /* Make service-cards rows 90% width on mobile */
+            .service-cards {
+                width: 90% !important;
+                margin: 0 auto !important;
+            }
+            
+            /* Add 20px padding to Construction paragraph on mobile */
+            .services-wrapper .kr8-anim-item p.fw-300 {
+                padding: 0 20px !important;
+            }
+            
+            /* Add 20px padding to CTA text elements on mobile */
+            .cta-content h2.kr8-t2.fs-48 {
+                padding: 0 20px !important;
+            }
+            
+            .cta-content p.fs-18.fw-300 {
+                padding: 0 20px !important;
+            }
         }
         @media (max-width: 700px) {
             .sticky-inner { flex-direction: column; gap: 10px; padding: 12px 18px; }
@@ -800,6 +1029,11 @@
                     <p class="fs-18 fw-300 timber-note">
                         We use organic media (Crushed Walnut / Corn Cob) to gently strip failing stain and UV mill glaze without eroding the wood itself.
                     </p>
+                    
+                    <!-- Mobile-only video element -->
+                    <div class="mobile-timber-video" style="display: none;">
+                        <video class="mobile-log-video" src="videos/optimized/Loghome.webm" autoplay muted loop playsinline preload="auto" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin: 20px 0;"></video>
+                    </div>
                     <ul class="timber-list fw-300">
                         <li>
                             <svg class="hud-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

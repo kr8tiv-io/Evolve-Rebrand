@@ -443,7 +443,7 @@
             flex: 1;
         }
         .sector-media {
-            min-height: 420px;
+            min-height: 350px;
             overflow: hidden;
             flex: 1;
         }
@@ -559,10 +559,97 @@
         .eng-card li { margin-bottom: 10px; font-size: var(--fs-14); }
 
         @media (max-width: 900px) {
-            .sector-row { flex-direction: column; }
+            .sector-row { 
+                flex-direction: column;
+                width: 98% !important;
+                margin: 0 auto !important;
+                max-width: none !important;
+            }
             .sector-img { order: -1; }
             .sector-media { order: -1; }
-            .sector-text { padding: 40px 24px; }
+            .sector-text { padding: 4px 4px; }
+            #safety-text { padding: 0 10px !important; }
+            
+            /* Add 15px padding to top of safety section on mobile */
+            #safety {
+                padding-top: 20px !important;
+            }
+            
+            /* Reduce margin-bottom on kr8-anim-item in logistics section */
+            .kr8-unified-inner .kr8-anim-item {
+                margin-bottom: 10px !important;
+            }
+            
+            /* Set margin-top to 0px for log-grid on mobile */
+            .log-grid {
+                margin-top: 0px !important;
+            }
+            
+            /* Set margin-top to 0px for engagement-grid button on mobile */
+            .engagement-grid + div {
+                margin-top: 0px !important;
+            }
+
+            /* Align "SAFETY IS OUR BASELINE" to the left on mobile for industrial page */
+            .kr8-unified-inner .kr8-anim-item h2.kr8-opt1-headline {
+                text-align: left !important;
+            }
+
+            /* Remove gap from sector-text on mobile for industrial page */
+            .sector-text {
+                gap: 0 !important;
+            }
+
+            /* Move industrial hero content down by 25px on mobile */
+            .ind-hero-content.kr8-anim-item {
+                margin-top: 25px !important;
+            }
+
+            /* Add black-to-transparent gradient overlay at bottom of industrial hero content for mobile */
+            .ind-hero-content.kr8-anim-item {
+                position: relative;
+            }
+            
+            .ind-hero-content.kr8-anim-item::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 80px;
+                background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+                z-index: 5;
+                pointer-events: none;
+            }
+            
+            /* Reset stat grid padding on mobile */
+            .stat-grid {
+                padding: 0 !important;
+                margin-top: 10px !important;
+            }
+            
+            /* Make stat cards 98% width on mobile */
+            .stat-card {
+                width: 98% !important;
+                margin: 0 auto !important;
+            }
+            
+            /* Add 5px padding to safety highlight on mobile */
+            .safety-highlight {
+                padding: 0 5px !important;
+            }
+            
+            /* Ensure fade effects work properly on mobile */
+            .header-fade-top {
+                height: 100px !important;
+                z-index: 10 !important;
+            }
+            .header-fade-bottom {
+                height: 100px !important;
+                z-index: 10 !important;
+                bottom: 0 !important;
+                position: absolute !important;
+            }
         }
     </style>
 </head>
@@ -646,7 +733,7 @@
             <div class="kr8-unified-inner">
                 <div class="kr8-anim-item" style="text-align: center; max-width: 900px; margin: 0 auto;">
                     <h2 class="kr8-opt1-headline kr8-metal kr8-title-aura">SAFETY IS OUR BASELINE</h2>
-                    <p class="fs-18 fw-300" style="color: var(--text-dim); line-height: 1.6; margin-top: 20px;">
+                    <p class="fs-18 fw-300" style="color: var(--text-dim); line-height: 1.6; margin-top: 20px;" id="safety-text">
                         We don't just follow safety protocols; we built our careers on them. As former <span class="safety-highlight">Occupational Health &amp; Safety Consultants</span>, our owners ensure that compliance drives efficiency. We maintain a zero-incident culture because we understand the cost of liability.
                     </p>
                 </div>
@@ -703,7 +790,7 @@
 
         <section class="kr8-unified-block" style="padding: 100px 0;">
             <div class="kr8-unified-inner">
-                <div class="kr8-anim-item" style="text-align: center; margin-bottom: 60px;">
+                <div class="kr8-anim-item" style="text-align: center; margin-bottom: 70px;">
                     <h2 class="kr8-opt1-headline">LOGISTICS SOLVED</h2>
                     <div class="kr8-neon-line" style="margin: 20px auto; width: 80px;"></div>
                     <p class="kr8-main-subtext" style="color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase;">We adapt to your site constraints</p>
@@ -770,7 +857,7 @@
                 
                 <div class="sector-row kr8-anim-item">
                     <div class="sector-text">
-                        <div class="kr8-menu-header" style="padding: 0; border: none; margin-bottom: 10px;">
+                        <div class="kr8-menu-header" style="padding: 0; border: none;">
                             <div class="kr8-neon-line"></div>
                             <h2 class="kr8-metal fs-32" style="font-weight: 800; margin-top: 15px;">SCAFFOLD & SUPPORT</h2>
                         </div>
@@ -789,7 +876,7 @@
                         <video class="sector-video" autoplay muted loop playsinline src="videos/optimized/industrialservice2.webm" preload="none" data-preload="defer"></video>
                     </div>
                     <div class="sector-text">
-                        <div class="kr8-menu-header" style="padding: 0; border: none; margin-bottom: 10px;">
+                        <div class="kr8-menu-header" style="padding: 0; border: none;">
                             <div class="kr8-neon-line"></div>
                             <h2 class="kr8-metal fs-32" style="font-weight: 800; margin-top: 15px;">IRON & COATING PREP</h2>
                         </div>
@@ -802,7 +889,7 @@
 
                 <div class="sector-row kr8-anim-item">
                     <div class="sector-text">
-                        <div class="kr8-menu-header" style="padding: 0; border: none; margin-bottom: 10px;">
+                        <div class="kr8-menu-header" style="padding: 0; border: none;">
                             <div class="kr8-neon-line"></div>
                             <h2 class="kr8-metal fs-32" style="font-weight: 800; margin-top: 15px;">FLEET & RIGS</h2>
                         </div>

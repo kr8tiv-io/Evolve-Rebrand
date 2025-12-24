@@ -270,20 +270,35 @@ if (contactEmail) contactEmail.addEventListener('input', validateStep);
 
 // Google Maps Autocomplete (initialized after Maps API loads)
 window.initAutocomplete = function() {
+    // Check if Google Maps API is available
+    if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+        console.warn('Google Maps API not loaded - autocomplete disabled');
+        return;
+    }
+    
     const input = document.getElementById("location-input");
+    if (!input) {
+        console.warn('Location input not found');
+        return;
+    }
+    
     const options = {
         fields: ["formatted_address", "geometry", "name"],
         strictBounds: false,
     };
 
-    const autocomplete = new google.maps.places.Autocomplete(input, options);
+    try {
+        const autocomplete = new google.maps.places.Autocomplete(input, options);
 
-    autocomplete.addListener("place_changed", () => {
-        const place = autocomplete.getPlace();
-        
-        if (place.geometry && place.geometry.location) {
-            input.style.borderColor = '#39FF14';
-            validateStep();
-        }
-    });
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+            
+            if (place.geometry && place.geometry.location) {
+                input.style.borderColor = '#39FF14';
+                validateStep();
+            }
+        });
+    } catch (error) {
+        console.warn('Google Places Autocomplete failed:', error);
+    }
 }

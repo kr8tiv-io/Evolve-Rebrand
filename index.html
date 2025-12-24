@@ -7,6 +7,10 @@
     <meta name="theme-color" content="#050505">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <title>EVOLVE ECO SURFACE PREP & RESTORATION | Home</title>
     <meta name="description" content="EVOLVE ECO SURFACE PREP & RESTORATION delivers dustless vapor blasting, steam washing, and restoration for residential, commercial, and industrial sites.">
     <meta property="og:title" content="EVOLVE ECO SURFACE PREP & RESTORATION | Home">
@@ -35,12 +39,9 @@
 
     <link rel="preload" as="script" href="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.5.3/dist/unicornStudio.umd.js" crossorigin>
     <link rel="preload" as="fetch" href="https://storage.googleapis.com/unicornstudio-production/embeds/6sUfsQeOyk0NuETDpNaG" crossorigin>
-    <link rel="preload" as="fetch" href="https://assets.unicorn.studio/videos/EKwL1DM5YsOIsgRymdV6zPXXb6M2/trees.mp4" crossorigin>
-    <link rel="preload" as="image" href="https://assets.unicorn.studio/images/EKwL1DM5YsOIsgRymdV6zPXXb6M2/Untitled%20design(9).png" crossorigin>
-    <link rel="preload" as="image" href="https://assets.unicorn.studio/images/EKwL1DM5YsOIsgRymdV6zPXXb6M2/evolve%20logo%20gradient.png" crossorigin>
-    
-    <link rel="preload" as="image" href="images/logos/evolvelogo.webp">
+    <!-- Mobile-optimized: Only preload critical hero assets -->
     <link rel="preload" as="image" href="images/backgrounds/hero-poster.webp">
+    <link rel="preload" as="image" href="images/logos/evolvelogo.webp">
     <link rel="preload" as="style" href="assets/css/style.css" onload="this.onload=null;this.rel='stylesheet';document.documentElement.classList.remove('css-loading');document.querySelectorAll('.site-header[data-css-hide]').forEach(function(el){el.style.opacity='';el.style.visibility='';});">
     <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
     <style>
@@ -280,10 +281,32 @@
 </head>
 <body class="index">
     <script>
+        // Mobile-optimized WebGL initialization
         document.addEventListener("DOMContentLoaded", () => {
+            // Detect mobile and optimize WebGL loading
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
             if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
-                window.UnicornStudio.init();
-                window.UnicornStudio.isInitialized = true;
+                if (isMobile) {
+                    // On mobile, delay WebGL initialization to prioritize critical content
+                    setTimeout(() => {
+                        try {
+                            window.UnicornStudio.init();
+                            window.UnicornStudio.isInitialized = true;
+                        } catch (error) {
+                            console.warn('WebGL initialization failed on mobile:', error);
+                            // Fallback: show static background
+                            const unicornHero = document.querySelector('.unicorn-hero');
+                            if (unicornHero) {
+                                unicornHero.style.backgroundImage = "url('images/backgrounds/hero-poster.webp')";
+                            }
+                        }
+                    }, 1000);
+                } else {
+                    // Desktop: initialize immediately
+                    window.UnicornStudio.init();
+                    window.UnicornStudio.isInitialized = true;
+                }
             }
         });
     </script>
@@ -1209,9 +1232,30 @@
         </div>
     </div>
 
-    <!-- Google Maps API -->
-    <!-- Temporarily disabled - add valid API key when ready -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6G4wmgSz6vViVmxmXANooNYgnL7aMsw&libraries=places&callback=initAutocomplete"></script>
+    <!-- Google Maps API - Optimized Loading -->
+    <script>
+        // Load Google Maps API only when needed
+        function loadGoogleMaps() {
+            if (window.googleMapsLoaded) return;
+            
+            const script = document.createElement('script');
+            script.async = true;
+            script.defer = true;
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6G4wmgSz6vViVmxmXANooNYgnL7aMsw&libraries=places&callback=initAutocomplete';
+            script.onerror = function() {
+                console.warn('Google Maps API failed to load - autocomplete disabled');
+                window.initAutocomplete = function() {}; // Fallback
+            };
+            document.head.appendChild(script);
+            window.googleMapsLoaded = true;
+        }
+        
+        // Load Maps only when booking modal is opened
+        window.addEventListener('load', function() {
+            // Defer Maps loading until user interaction
+            setTimeout(loadGoogleMaps, 2000);
+        });
+    </script>
     
     <!-- Booking Wizard Script -->
     <script src="assets/js/booking-wizard.js" defer></script>
