@@ -5880,10 +5880,10 @@ button.footer-link:hover::after {
     .kr8-opt1-container h1,
     .kr8-opt1-container h2,
     .kr8-opt1-container h3 {
-        padding-left: 5px !important;
-        padding-right: 5px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
     
     /* Body text blocks */
@@ -6195,7 +6195,7 @@ button.footer-link:hover::after {
     .kr8-opt1-intel {
         margin-top: 0 !important;
         margin-bottom: 10px !important;
-        padding-top: 20px !important;
+        padding-top: 30px !important;
         padding-bottom: 0 !important;
         display: flex !important;
         flex-direction: column !important;
@@ -6845,7 +6845,7 @@ button.footer-link:hover::after {
         min-height: auto !important;
         padding: 0 !important;
     }
-    */    }
+    */
 }
 
 /* === MOBILE: Hero Section Layout Adjustments === */
@@ -7904,38 +7904,6 @@ button.footer-link:hover::after {
     }
 }
 
-/* === PICKUP & DROPOFF IMAGE FULL WIDTH ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Target the specific pickup & dropoff image card */
-    .kr8-img-card:has(.kr8-meta h4:contains("PICKUP & DROPOFF")) {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-    
-    /* Alternative selector for the pickup/dropoff image */
-    .kr8-img-card:nth-child(1) .kr8-vis[style*="process5.webp"],
-    .kr8-vis[style*="process5.webp"] {
-        width: 100% !important;
-        height: 300px !important; /* Maintain reasonable height */
-        background-size: 100% auto !important; /* Cover width, auto height */
-        background-position: center top !important; /* Crop from top */
-        background-repeat: no-repeat !important;
-        margin: 0 !important;
-        border-radius: 8px !important;
-    }
-    
-    /* Ensure the card container is also full width */
-    .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 0 20px 0 !important;
-    }
-}
-
 /* === CENTER PROCESS SECTION ROWS AND IMAGES ON INDEX MOBILE === */
 
 @media (max-width: 767px) {
@@ -8453,273 +8421,6 @@ button.footer-link:hover::after {
     }
 }
 
-/* === MAKE PROCESS5.WEBP MATCH OTHER IMAGES EXACTLY ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Index page only - make process5.webp match other kr8-img-card images */
-    body.index .kr8-img-card .kr8-vis[style*="process5.webp"],
-    body.index .kr8-vis[style*="process5.webp"] {
-        width: 100% !important;
-        height: 200px !important; /* Match standard kr8-img-card height */
-        min-height: 200px !important;
-        max-height: 200px !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        object-fit: cover !important;
-        overflow: hidden !important;
-        border-radius: 8px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* Ensure the container also matches */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
-        height: 310px !important; /* Match standard kr8-img-card height */
-        min-height: 310px !important;
-        max-height: 310px !important;
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    
-    /* Match the visual container size */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
-        height: 200px !important;
-        min-height: 200px !important;
-        max-height: 200px !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* Ensure meta section matches other cards */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-meta {
-        height: 110px !important; /* Remaining height for meta */
-        min-height: 110px !important;
-        max-height: 110px !important;
-        flex-shrink: 0 !important;
-        padding: 8px 12px !important;
-    }
-}
-
-/* === MATCH PROCESS5.WEBP TO PROCESS4.WEBP CONSTRAINTS ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Index page only - make process5.webp match process4.webp exactly */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        height: 310px !important;
-        min-height: 310px !important;
-        max-height: 310px !important;
-    }
-    
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
-        width: 100% !important;
-        height: 200px !important;
-        object-fit: cover !important;
-        flex-shrink: 0 !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-    }
-    
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-meta {
-        padding: 8px 12px !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-        overflow: visible !important;
-    }
-}
-
-/* === MAKE PROCESS5.WEBP WIDER TO MATCH OTHER IMAGES ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Index page only - make process5.webp wider to match other images exactly */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
-        width: 100% !important;
-        height: 200px !important; /* Keep exact same height */
-        object-fit: cover !important;
-        flex-shrink: 0 !important;
-        background-size: 120% auto !important; /* Make image wider */
-        background-position: center top !important; /* Clip from top */
-        background-repeat: no-repeat !important;
-        overflow: hidden !important;
-        border-radius: 8px !important;
-    }
-    
-    /* Also apply to direct selector */
-    body.index .kr8-vis[style*="process5.webp"] {
-        width: 100% !important;
-        height: 200px !important;
-        background-size: 120% auto !important; /* 120% width to fill better */
-        background-position: center top !important; /* Clip from top as needed */
-        background-repeat: no-repeat !important;
-        object-fit: cover !important;
-        overflow: hidden !important;
-    }
-}
-
-/* === ADJUST PROCESS5.WEBP HEIGHT TO FILL BOX COMPLETELY ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Index page only - adjust process5.webp height to fill box completely */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
-        width: 100% !important;
-        height: 220px !important; /* Increased height to fill box */
-        object-fit: cover !important;
-        flex-shrink: 0 !important;
-        background-size: 120% auto !important; /* Keep wider image */
-        background-position: center top !important; /* Clip from top */
-        background-repeat: no-repeat !important;
-        overflow: hidden !important;
-        border-radius: 8px !important;
-    }
-    
-    /* Also apply to direct selector */
-    body.index .kr8-vis[style*="process5.webp"] {
-        width: 100% !important;
-        height: 220px !important; /* Increased to fill box */
-        background-size: 120% auto !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-        object-fit: cover !important;
-        overflow: hidden !important;
-    }
-    
-    /* Adjust container height to match */
-    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
-        height: 330px !important; /* 220px image + 110px meta */
-        min-height: 330px !important;
-        max-height: 330px !important;
-    }
-}
-
-/* === MATCH PROCESS5.WEBP CARD TO PROCESS4.WEBP CARD EXACTLY ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Index page only - make process5.webp card identical to process4.webp card */
-    
-    /* Target the process5.webp card (3rd kr8-img-card) */
-    body.index .kr8-img-card:nth-child(3) {
-        /* Apply exact same styles as process4.webp card (2nd kr8-img-card) */
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        height: 310px !important; /* Same as standard */
-        min-height: 310px !important;
-        max-height: 310px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border-radius: 12px !important;
-        overflow: hidden !important;
-        position: relative !important;
-        background: rgba(10, 10, 10, 0.6) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    }
-    
-    /* Match the visual container exactly */
-    body.index .kr8-img-card:nth-child(3) .kr8-vis {
-        width: 100% !important;
-        height: 200px !important; /* Same as standard */
-        object-fit: cover !important;
-        flex-shrink: 0 !important;
-        background-size: cover !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
-        overflow: hidden !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    /* Match the meta container exactly */
-    body.index .kr8-img-card:nth-child(3) .kr8-meta {
-        padding: 8px 12px !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-        overflow: visible !important;
-        background: transparent !important;
-        border: none !important;
-        height: 110px !important; /* Remaining height */
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: flex-start !important;
-    }
-    
-    /* Match the text styling exactly */
-    body.index .kr8-img-card:nth-child(3) .kr8-meta h4 {
-        font-family: 'Neue Montreal', sans-serif !important;
-        font-weight: 500 !important;
-        font-size: 16px !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.1em !important;
-        color: #ffffff !important;
-        margin: 0 0 8px 0 !important;
-        padding: 0 !important;
-    }
-    
-    body.index .kr8-img-card:nth-child(3) .kr8-meta p {
-        font-family: 'Neue Montreal', sans-serif !important;
-        font-weight: 400 !important;
-        font-size: 14px !important;
-        color: rgba(255, 255, 255, 0.7) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        line-height: 1.4 !important;
-    }
-    
-    /* Ensure no unique styling overrides */
-    body.index .kr8-img-card:nth-child(3) .kr8-vis[style*="process5.webp"] {
-        background-size: cover !important;
-        background-position: center center !important;
-        height: 200px !important;
-        width: 100% !important;
-    }
-}
-
-/* === EXPAND PROCESS5.WEBP TO TOP OF FRAME AND MAKE WIDER ON MOBILE === */
-
-@media (max-width: 767px) {
-    /* Index page only - expand process5.webp to top and make wider */
-    body.index .kr8-img-card:nth-child(3) .kr8-vis {
-        position: relative !important;
-        top: -5px !important; /* Shift upwards to eliminate space */
-        transform: translateY(-5px) !important;
-        height: 210px !important; /* Increase height to fill frame */
-        background-size: 130% auto !important; /* Make wider */
-        background-position: center top !important; /* Anchor to top */
-        margin-top: -10px !important; /* Remove top margin */
-        padding-top: 0 !important;
-    }
-    
-    /* Also apply to direct selector for process5.webp */
-    body.index .kr8-vis[style*="process5.webp"] {
-        position: relative !important;
-        top: -5px !important;
-        transform: translateY(-5px) !important;
-        height: 210px !important;
-        background-size: 130% auto !important;
-        background-position: center top !important;
-        margin-top: -10px !important;
-        padding-top: 0 !important;
-    }
-    
-    /* Adjust container to accommodate shifted image */
-    body.index .kr8-img-card:nth-child(3) {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-        overflow: visible !important;
-    }
-    
-    /* Ensure meta section adjusts to maintain total height */
-    body.index .kr8-img-card:nth-child(3) .kr8-meta {
-        margin-top: -5px !important; /* Compensate for shifted image */
-        height: 105px !important; /* Adjust to maintain total 310px */
-    }
-}
-
 /* === CENTER MODERNISED SURFACE RESTORATION SECTION ON MOBILE === */
 
 @media (max-width: 767px) {
@@ -8759,7 +8460,7 @@ button.footer-link:hover::after {
     }
     
     body.index .kr8-opt1-body p {
-        text-align: center !important;
+        text-align: left !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -8800,7 +8501,7 @@ button.footer-link:hover::after {
     
     /* Ensure all child elements are centered too */
     body.index .kr8-opt1-intel.kr8-anim-item > * {
-        text-align: center !important;
+        text-align: left !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
@@ -8821,8 +8522,8 @@ button.footer-link:hover::after {
 @media (max-width: 767px) {
     /* Index page only - add 2px margin left and right inside kr8-opt1-grid kr8-anim-grid */
     body.index .kr8-opt1-grid.kr8-anim-grid {
-        margin-left: 2px !important;
-        margin-right: 2px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
@@ -8831,5 +8532,232 @@ button.footer-link:hover::after {
     body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card {
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+}
+
+/* === JUSTIFY KR8-OPT1-BODY TEXT LEFT ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - justify kr8-opt1-body text left on mobile */
+    body.index p.kr8-opt1-body {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* === CENTER ALL KR8-VIS DIVS ON INDEX === */
+
+body.index .kr8-vis {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    display: block !important;
+}
+
+/* === CENTER ALL KR8-IMG-CARD ELEMENTS ON MOBILE INDEX === */
+
+@media (max-width: 767px) {
+    /* Index page only - center all kr8-img-card elements on mobile */
+    body.index .kr8-img-card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        display: block !important;
+    }
+}
+
+/* === ADD 20PX PADDING TO KR8-META KR8-TITLE-AURA ON MOBILE INDEX === */
+
+@media (max-width: 767px) {
+    /* Index page only - add 20px padding left and right for kr8-meta kr8-title-aura */
+    body.index .kr8-meta.kr8-title-aura {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* === INDEX MOBILE: NORMALIZE KR8-OPT1 LAYOUT === */
+
+@media (max-width: 767px) {
+    body.index .kr8-opt1-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 12px !important;
+        margin: 0 auto !important;
+    }
+
+    body.index .kr8-opt1-intel,
+    body.index .kr8-opt1-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    body.index .kr8-opt1-intel {
+        order: 1 !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    body.index .kr8-opt1-intel > * {
+        width: 100% !important;
+        max-width: 520px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    body.index .kr8-opt1-headline,
+    body.index .kr8-opt1-subhead {
+        text-align: center !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        box-sizing: border-box !important;
+    }
+
+    body.index .kr8-opt1-body {
+        padding: 0 6px !important;
+        text-align: left !important;
+    }
+
+    body.index .kr8-opt1-body p {
+        margin-bottom: 16px !important;
+        text-align: left !important;
+    }
+
+    body.index .kr8-opt1-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+        margin: 24px auto 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    body.index .kr8-opt1-actions a {
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+
+    body.index .kr8-opt1-grid {
+        order: 2 !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Update padding to 30px left and right for kr8-meta kr8-title-aura */
+    body.index .kr8-meta.kr8-title-aura {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+}
+
+
+/* === ENSURE ALL CARDS HAVE IDENTICAL STYLING ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - force all kr8-img-card elements in kr8-opt1-grid to have identical styling */
+    
+    /* Reset any conflicting styles and apply uniform styling */
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card {
+        /* Transform properties - match heat safe card exactly */
+        translate: none !important;
+        rotate: none !important;
+        scale: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        
+        /* Layout properties */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        
+        /* Size properties */
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        
+        /* Spacing properties */
+        margin: 0 !important;
+        padding: 16px !important;
+        
+        /* Visual properties */
+        background: rgba(10, 10, 10, 0.75) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 16px !important;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+    
+    /* Ensure all internal elements are identical */
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card .kr8-vis {
+        width: 100% !important;
+        aspect-ratio: 4 / 3 !important;
+        height: auto !important;
+        min-height: 220px !important;
+        max-height: none !important;
+        flex-shrink: 0 !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card .kr8-meta {
+        padding: 0 !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+        overflow: visible !important;
+        background: transparent !important;
+        border: none !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+    
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card .kr8-meta h4 {
+        font-family: 'Neue Montreal', sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        color: #ffffff !important;
+        margin: 0 0 8px 0 !important;
+        padding: 0 !important;
+    }
+    
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card .kr8-meta p {
+        font-family: 'Neue Montreal', sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Swap Pickup & Dropoff (card 5) with Competitive Pricing (card 6) */
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card:nth-child(5) {
+        order: 6 !important;
+    }
+
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card:nth-child(6) {
+        order: 5 !important;
     }
 }

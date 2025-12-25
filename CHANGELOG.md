@@ -14,6 +14,11 @@
 ### Changed
 - Improved mobile layout for better readability and usability
 - Updated card styling in before/after modules
+- **Index Mobile Optimizations**:
+  - Standardized kr8-opt1 card styling (spacing, borders, aspect ratio, typography)
+  - Reordered Pickup & Dropoff / Competitive Pricing tiles for better storytelling
+  - Added consistent padding and spacing to the Modernised Surface Restoration headline/subhead stack
+  - Balanced card grid/text spacing with refreshed gap values
 
 ### Added
 - **Navigation Guard**: Added prevention for booking wizard modal during page transitions
