@@ -427,9 +427,9 @@ body::before {
     position: absolute;
     width: 12px;
     height: 12px;
-    top: 50%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     border-radius: 50%;
     background: rgba(0, 255, 65, 0.9);
     box-shadow:
@@ -733,7 +733,7 @@ button.nav-item:hover::after {
     width: 600px;
     height: 600px;
     background: radial-gradient(circle, rgba(0, 255, 65, 0.15), transparent 60%);
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -3054,9 +3054,9 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 }
 .kr8-handle-circle {
     position: absolute;
-    top: 50%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: 50px;
     height: 50px;
     background: #000;
@@ -3149,9 +3149,9 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     border: 1px solid rgba(0, 255, 65, 0.18);
     box-shadow: 0 0 18px rgba(0, 255, 65, 0.12);
     opacity: 0.8;
-    top: 50%;
+    top: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     pointer-events: none;
     z-index: 0;
 }
@@ -3163,7 +3163,7 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     border-radius: 50%;
     background: #00ff41;
     box-shadow: 0 0 12px rgba(0, 255, 65, 0.7);
-    top: 50%;
+    top: 20px;
     left: 50%;
     transform-origin: -48px -48px;
     animation: precisionOrbit 5s linear infinite;
@@ -3456,8 +3456,8 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.8));
 }
 .footer-social-icon {
-    width: 18px;
-    height: 18px;
+    width: 36px;
+    height: 36px;
     fill: currentColor;
 }
 .footer-bottom {
@@ -3481,6 +3481,8 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 
 /* MOBILE */
 .mobile-toggle { display: none; }
+.nav-close-btn { display: none; }
+
 @media (max-width: 900px) {
     .info-grid, .grid-features, .services-section, .process-steps { grid-template-columns: 1fr; }
     .hero-title { line-height: 1; }
@@ -3495,8 +3497,35 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     .nav-links {
         position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: #000;
         flex-direction: column; justify-content: center; transition: 0.4s; z-index: 101;
+        padding: 60px 40px;
     }
     .nav-links.active { right: 0; }
+    
+    /* Mobile menu close button */
+    .nav-close-btn {
+        display: block;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Neue Montreal', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .nav-close-btn:hover,
+    .nav-close-btn:focus {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #39FF14;
+        color: #39FF14;
+    }
 }
 @media (max-width: 600px) {
     .footer-grid { grid-template-columns: 1fr; }
@@ -3588,11 +3617,13 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     justify-content: center;
     padding: 20px;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .booking-modal.active {
     opacity: 1;
+    visibility: visible;
     pointer-events: all;
 }
 .modal-container {
@@ -3615,20 +3646,30 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 }
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    max-width: 44px !important;
+    max-height: 44px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex: 0 0 44px !important;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 10001;
+    appearance: none;
+    -webkit-appearance: none;
 }
 .modal-close:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -3744,9 +3785,16 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 }
 /* Form Inputs */
 .evolve-input-group {
-    position: relative;
     margin-bottom: 24px;
 }
+
+/* Input wrapper for icon + input positioning */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .evolve-input {
     width: 100%;
     background: rgba(255, 255, 255, 0.03);
@@ -3767,37 +3815,143 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 .evolve-input::placeholder {
     color: rgba(255, 255, 255, 0.3);
 }
+
+/* Textarea styling */
+textarea.evolve-input {
+    text-align: left;
+    padding-top: 16px;
+    line-height: 1.4;
+    min-height: 120px;
+    resize: vertical;
+}
+textarea.evolve-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+}
+
+/* Icon positioning inside input wrapper */
 .input-icon {
     position: absolute;
     left: 16px;
-    top: 50%;
+    top: 20px;
     transform: translateY(-50%);
     color: rgba(255, 255, 255, 0.4);
     font-size: 20px;
     transition: color 0.3s ease;
     pointer-events: none;
+    z-index: 1;
 }
-.evolve-input:focus + .input-icon {
-    color: #39FF14;
-}
-.input-label-top {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    pointer-events: none;
-}
-textarea.evolve-input {
-    min-height: 120px;
-    resize: vertical;
-    padding-top: 16px;
-}
-textarea.evolve-input + .input-icon {
+
+/* Icon for textareas - position at top */
+.input-wrapper:has(textarea) .input-icon {
     top: 24px;
     transform: none;
+}
+
+/* Focus state for icon */
+.input-wrapper:focus-within .input-icon {
+    color: #39FF14;
+}
+
+/* Hide Google Places autocomplete error icons when API fails */
+.pac-container {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-top: 4px;
+    font-family: 'Neue Montreal', sans-serif;
+}
+.pac-item {
+    padding: 10px 16px;
+    color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+.pac-item:hover {
+    background: rgba(57, 255, 20, 0.1);
+}
+.pac-item-query {
+    color: #ffffff;
+}
+.pac-icon {
+    display: none; /* Hide Google's place icons - they show errors when API fails */
+}
+.pac-logo:after {
+    display: none; /* Hide Google logo */
+}
+/* Labels on top of input fields - unified styling */
+.input-label-top {
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    left: 0;
+    margin-bottom: 8px;
+    order: -1;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+    background: transparent;
+}
+
+/* Input group flex ordering - label on top */
+.evolve-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input styling */
+.evolve-input {
+    order: 1;
+}
+.input-icon {
+    order: 1;
+}
+
+/* Desktop-specific tweaks */
+@media (min-width: 769px) {
+    .input-label-top {
+        font-size: 11px;
+    }
+}
+
+/* Mobile Form Fixes */
+@media (max-width: 768px) {
+    .input-label-top {
+        padding-left: 5px;
+        padding-top: 2px;
+    }
+    
+    /* Fix icon and placeholder alignment in input boxes */
+    .evolve-input {
+        padding: 16px 16px 16px 48px;
+        text-align: left;
+    }
+    
+    .input-icon {
+        top: auto;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+    
+    /* Textarea inputs - left align placeholder */
+    textarea.evolve-input {
+        text-align: left;
+        padding-top: 16px;
+    }
+    
+    textarea.evolve-input::placeholder {
+        text-align: left;
+    }
+    
+    /* Icon positioning for textareas */
+    textarea.evolve-input + .input-icon {
+        top: 24px;
+        transform: none;
+    }
 }
 /* File Upload */
 .upload-zone {
@@ -4127,6 +4281,14 @@ button.footer-link:hover::after {
         height: 48px;
         top: 16px;
         right: 16px;
+        border-radius: 50% !important;
+        aspect-ratio: 1/1 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Add padding to modal header to prevent X overlap */
+    .modal-header {
+        padding: 60px 40px 30px !important;
     }
     
     /* Header CTA button */
@@ -5320,6 +5482,61 @@ button.footer-link:hover::after {
         width: calc(100% - 40px) !important;
         margin: 0 20px !important;
         text-align: center !important;
+    }
+    
+    /* Fix phone icon circle shape in mobile menu */
+    .nav-item.nav-icon {
+        width: 34px !important;
+        height: 34px !important;
+        border-radius: 50% !important;
+        aspect-ratio: 1/1 !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Add padding to GET QUOTE button in mobile menu */
+    .header-cta {
+        padding: 8px 1px !important;
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: fit-content !important;
+    }
+}
+
+/* Small screens - GET QUOTE button responsive text */
+@media (max-width: 600px) {
+    .header-cta {
+        font-size: 13px !important;
+        padding: 7px 1px !important;
+    }
+}
+
+/* Extra small screens - GET QUOTE button responsive text */
+@media (max-width: 450px) {
+    .header-cta {
+        font-size: 11px !important;
+        padding: 6px 1px !important;
+    }
+}
+
+/* Ultra small screens - GET QUOTE button responsive text */
+@media (max-width: 350px) {
+    .site-header .header-cta,
+    .nav-links .header-cta {
+        font-size: 9px !important;
+        padding: 5px 1px !important;
+        text-align: center !important;
+        line-height: 1 !important;
+        white-space: pre-line !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
 
@@ -6557,8 +6774,9 @@ button.footer-link:hover::after {
         transform: scale(1.33) !important;
     }
     
-    /* Left-align phone number in footer */
-    .footer-col a[href="tel:7809155471"] {
+    /* Left-align phone number and email in footer */
+    .footer-col a[href="tel:7809155471"],
+    .footer-col a[href^="mailto:"] {
         text-align: left !important;
         display: block !important;
         padding-left: 0 !important;
@@ -6586,7 +6804,8 @@ button.footer-link:hover::after {
         padding-left: 4px !important; /* Tiny visual offset for readability */
     }
 
-    /* Mobile: disable GSAP horizontal layout + animations */
+    /* === MOBILE: DISABLED GSAP HORIZONTAL LAYOUT CODE === */
+    /*
     .evolve-horizon-wrap,
     .eh-track {
         display: flex !important;
@@ -6626,6 +6845,7 @@ button.footer-link:hover::after {
         min-height: auto !important;
         padding: 0 !important;
     }
+    */    }
 }
 
 /* === MOBILE: Hero Section Layout Adjustments === */
@@ -6646,27 +6866,46 @@ button.footer-link:hover::after {
     .index .kr8-services-inner,
     .index .kr8-opt1-container,
     .index .kr8-single-content {
-        width: 98% !important;
-        max-width: 98% !important;
+        width: 100% !important;
+        max-width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
     
-    /* Index page only: Process section rows to 95% width */
+    /* Ensure all kr8-vis images are truly edge-to-edge */
+    .index .kr8-opt1-grid {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    /* Index page only: Process section rows to 100% width */
     .index .evolve-horizon-wrap,
     .index .eh-track {
-        width: 95% !important;
-        max-width: 95% !important;
+        width: 100% !important;
+        max-width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
     
     .index .eh-intro-panel,
     .index .eh-card {
-        width: 95% !important;
-        max-width: 95% !important;
+        width: 100% !important;
+        max-width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+    
+    /* Ensure eh-visual images are full width on mobile */
+    .index .eh-visual {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .index .eh-visual img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
     }
     
     /* Index page only: Center the Modernized Surface Restoration title on mobile */
@@ -7056,7 +7295,6 @@ button.footer-link:hover::after {
         box-sizing: border-box !important;
     }
 
-    .kr8-marquee-track,
     .kr8-scan-line,
     .kr8-combo-spray,
     .kr8-opt1-spray,
@@ -7113,5 +7351,1485 @@ button.footer-link:hover::after {
     .kr8-cta-title {
         line-height: 1.1 !important;
         margin-bottom: 16px !important;
+    }
+}
+
+/* === INDEX MOBILE: Final Polish === */
+@media (max-width: 768px) {
+    /* 1. HERO TEXT - Never break words, only break lines between words */
+    body.index .hero-title-unified,
+    body.index .hero-kicker,
+    body.index .hero-intro-unified,
+    body.index h1,
+    body.index h2,
+    body.index h3 {
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+        -webkit-hyphens: none !important;
+    }
+    
+    /* 2. INDUSTRIAL POWER section - Left align on index mobile only */
+    body.index .kr8-opt1-subhead {
+        text-align: left !important;
+    }
+    
+    /* 3. THE PROCESS section - 2px padding on all text and images */
+    body.index .eh-intro-panel,
+    body.index .eh-card {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+    
+    body.index .eh-header,
+    body.index .eh-header h2,
+    body.index .eh-sub,
+    body.index .eh-content,
+    body.index .eh-content h3,
+    body.index .eh-content p,
+    body.index .scroll-indicator {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+    
+    body.index .eh-visual {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+    
+    /* 4. INDEX ROWS - 1% margin on each side for rows without existing margins */
+    body.index .kr8-unified-inner,
+    body.index .kr8-opt1-container,
+    body.index .kr8-single-content,
+    body.index .kr8-cta-section,
+    body.index .kr8-hero-socials,
+    body.index .slogan-row,
+    body.index .kr8-opt1-grid,
+    body.index .kr8-ba-container,
+    body.index .kr8-external-actions-container {
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+        width: 100% !important;
+        max-width: 100% !important;    }
+    
+    /* Keep sections at 100% width - only inner content gets margins */
+    body.index section,
+    body.index .kr8-unified-block,
+    body.index .kr8-services-shell,
+    body.index .kr8-marquee-wrapper,
+    body.index .eh-pin-spacer,
+    body.index .kr8-before-after-module,
+    body.index .site-footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* === MOBILE MENU CLOSE BUTTON FIXES === */
+
+/* Mobile (max-width: 767px): Reduce size by 60% and center over menu items */
+@media (max-width: 767px) {
+    .menu-close-container {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 102;
+    }
+    
+    .menu-close-container .nav-close-btn {
+        transform: scale(0.4); /* Reduce size by 60% */
+        font-size: 4.8px !important; /* 12px * 0.4 = 4.8px */
+        padding: 4.8px 8px !important; /* 12px 20px * 0.4 */
+        border-radius: 3.2px !important; /* 8px * 0.4 */
+    }
+}
+
+/* Tablet (min-width: 768px and max-width: 1024px): Center above menu items */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-close-container {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 102;
+    }
+    
+    .menu-close-container .nav-close-btn {
+        transform: scale(0.7); /* Slightly smaller for tablet */
+        font-size: 8.4px !important; /* 12px * 0.7 */
+        padding: 8.4px 14px !important; /* 12px 20px * 0.7 */
+    }
+}
+
+/* Desktop (min-width: 1025px): Hide close button completely */
+@media (min-width: 1025px) {
+    .menu-close-container {
+        display: none !important;
+    }
+    
+    .menu-close-container .nav-close-btn {
+        display: none !important;
+    }
+}
+
+/* === INDUSTRIAL PAGE TABLET FIXES (768px-1024px) === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* Remove sticky footer on tablet */
+    .sticky-cta-bar {
+        display: none !important;
+    }
+    
+    /* Safety section fixes */
+    #safety {
+        padding: 60px 0 !important;
+    }
+    
+    #safety .kr8-opt1-headline {
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    #safety-text {
+        text-align: center !important;
+        max-width: 800px !important;
+        margin: 0 auto 30px !important;
+    }
+    
+    /* Remove excess whitespace in safety section */
+    .safety-img-container {
+        margin-bottom: 20px !important;
+    }
+    
+    /* Center logistics section content */
+    .kr8-opt1-headline:has("LOGISTICS SOLVED") {
+        text-align: center !important;
+    }
+    
+    /* Add margin-top to Request Rate Sheet button */
+    .kr8-btn.primary:has("REQUEST RATE SHEET"),
+    a.kr8-btn.primary[href="mailto:info@evolveprep.com"] {
+        margin-top: 40px !important;
+        display: block !important;
+        text-align: center !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* === COMMERCIAL PAGE MOBILE & TABLET FIXES === */
+
+/* Mobile footer fixes */
+@media (max-width: 767px) {
+    /* Remove black line between Call button and Evolve logo */
+    .footer-divider {
+        display: none !important;
+    }
+    
+    /* Center footer text under Evolve logo with padding */
+    .footer-tagline {
+        text-align: center !important;
+        padding: 0 20px !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Match footer-cta button width */
+    .footer-cta {
+        display: block !important;
+        margin: 20px auto 0 !important;
+        width: 280px !important;
+        text-align: center !important;
+    }
+}
+
+/* Tablet Ready to Restore section fixes */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Stack buttons vertically */
+    .cta-actions {
+        flex-direction: column !important;
+        gap: 16px !important;
+        align-items: center !important;
+    }
+    
+    /* Set buttons to 100% width */
+    .cta-actions .kr8-btn {
+        width: 100% !important;
+        max-width: 400px !important;
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    /* Remove horizontal line under Ready to Restore heading */
+    .kr8-t2.fs-48[style*="margin-bottom: 20px"] {
+        border-bottom: none !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 0 !important;
+    }
+    
+    /* Remove black line overlay on video background */
+    .cta-overlay {
+        display: none !important;
+    }
+    
+    /* Remove any borders or HR elements in cta-banner */
+    .cta-banner hr,
+    .cta-banner .divider,
+    .cta-banner .border-line {
+        display: none !important;
+    }
+}
+
+/* === INDEX/HOME PAGE MOBILE & TABLET FIXES === */
+
+/* Hero layout reversal for mobile & tablet */
+@media (max-width: 1024px) {
+    .home-hero {
+        flex-direction: column-reverse !important;
+        display: flex !important;
+    }
+    
+    .home-hero-content {
+        order: 2 !important;
+        padding: 40px 24px 60px !important;
+        background: transparent !important;
+    }
+    
+    .home-hero-image {
+        order: 1 !important;
+        height: 50vh !important;
+        min-height: 300px !important;
+    }
+    
+    /* Remove background color/gradient from hero text container */
+    .home-hero-content,
+    .hero-intro-unified {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    /* Remove white transition blocks from editorial sections */
+    .evolve-editorial-2,
+    .evolve-editorial {
+        background: transparent !important;
+        border-top: none !important;
+        border-bottom: none !important;
+        padding: 60px 0 !important;
+    }
+    
+    /* Remove any white gaps or transitions */
+    .evolve-editorial-2::before,
+    .evolve-editorial-2::after,
+    .evolve-editorial::before,
+    .evolve-editorial::after {
+        display: none !important;
+    }
+    
+    /* Ensure dark theme continuity */
+    .evolve-editorial-2,
+    .evolve-editorial {
+        background-color: var(--bg-dark) !important;
+    }
+    
+    /* Remove accent lines that might create white gaps */
+    .accent-line {
+        display: none !important;
+    }
+}
+
+/* Additional mobile-specific fixes */
+@media (max-width: 767px) {
+    .home-hero {
+        flex-direction: column-reverse !important;
+    }
+    
+    .home-hero-content {
+        order: 2 !important;
+        padding: 30px 20px 40px !important;
+    }
+    
+    .home-hero-image {
+        order: 1 !important;
+        height: 40vh !important;
+        min-height: 250px !important;
+    }
+}
+
+/* === BOOKING WIZARD ICON FIXES === */
+
+/* Tablet: Remove stray icons in "We Come To You" selection step */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .option-card[data-value="onsite"] .option-icon,
+    .option-card[data-value="dropoff"] .option-icon,
+    .option-card[data-value="pickup"] .option-icon {
+        display: none !important;
+    }
+    
+    /* Ensure option cards still have proper spacing without icons */
+    .option-card {
+        padding: 20px !important;
+        text-align: center !important;
+        min-height: 120px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .option-title {
+        margin: 0 !important;
+        font-size: 14px !important;
+    }
+}
+
+/* All devices: Remove stray icon left of Phone input field */
+.input-wrapper:has(input[type="tel"]) .input-icon,
+.input-wrapper:has(#contact-phone) .input-icon {
+    display: none !important;
+}
+
+/* Alternative selector for broader compatibility */
+.evolove-input-group:has(input[type="tel"]) .input-icon,
+.evolve-input-group:has(#contact-phone) .input-icon {
+    display: none !important;
+}
+
+/* Fallback: Hide phone input icons by class */
+.wizard-step[data-step="3"] .evolve-input-group:nth-child(2) .input-icon {
+    display: none !important;
+}
+
+/* Also hide any floating icons that might appear outside selection boxes */
+.option-card .option-icon.floating,
+.option-card ~ .option-icon,
+.option-grid .option-icon:not(.option-card .option-icon) {
+    display: none !important;
+}
+
+/* === MOBILE NAVIGATION LAYOUT FIX === */
+
+@media (max-width: 767px) {
+    /* Ensure nav items stack properly without the close button interfering */
+    .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding-top: 80px !important; /* Add space for close button at top */
+    }
+    
+    /* Ensure close button is positioned at the very top */
+    .menu-close-container {
+        position: absolute !important;
+        top: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 102 !important;
+    }
+    
+    /* Make sure nav items don't wrap or create extra rows */
+    .nav-item {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        padding: 15px 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Ensure the close button doesn't affect the flow of nav items */
+    .menu-close-container .nav-close-btn {
+        position: relative !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* === INDEX PAGE MOBILE HERO FIX === */
+
+@media (max-width: 767px) {
+    /* Ensure WebGL is on top and text is underneath with see-through background */
+    .home-hero {
+        flex-direction: column !important;
+        display: flex !important;
+    }
+    
+    .home-hero-image {
+        order: 1 !important;
+        height: 60vh !important;
+        min-height: 300px !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+    
+    .home-hero-content {
+        order: 2 !important;
+        position: relative !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        padding: 30px 20px 40px !important;
+        z-index: 2 !important;
+        margin-top: -40px !important; /* Pull up to overlap slightly */
+    }
+    
+    /* Ensure text is readable over video background */
+    .home-hero-content h1,
+    .home-hero-content h2,
+    .home-hero-content p {
+        position: relative !important;
+        z-index: 3 !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    }
+    
+    /* Add subtle gradient for text readability */
+    .home-hero-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+        z-index: -1 !important;
+    }
+}
+
+/* === REMOVE WEBGL PSEUDO-ELEMENT OVERLAY ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Remove the dark gradient pseudo-element overlay on WebGL video */
+    .home-hero-image::after {
+        display: none !important;
+        content: none !important;
+    }
+    
+    /* Also remove any other gradient overlays that might be interfering */
+    .home-hero-image::before {
+        display: none !important;
+        content: none !important;
+    }
+}
+
+/* === REMOVE ALL HERO CONTENT PSEUDO-ELEMENT OVERLAYS ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Remove all gradient overlays from hero content */
+    .home-hero-content::before,
+    .comm-hero-content::before,
+    .res-hero-text::before,
+    .ind-hero-content::before {
+        display: none !important;
+        content: none !important;
+    }
+    
+    /* Also remove any after elements */
+    .home-hero-content::after,
+    .comm-hero-content::after,
+    .res-hero-text::after,
+    .ind-hero-content::after {
+        display: none !important;
+        content: none !important;
+    }
+}
+
+/* === CENTER PROCESS SECTION IMAGES === */
+
+/* All devices - center the process cards */
+.eh-track {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.eh-card {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Center the images within each card */
+.eh-visual {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.eh-visual img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
+/* Mobile specific centering */
+@media (max-width: 768px) {
+    .eh-track {
+        align-items: center !important;
+        justify-content: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .eh-card {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 100% !important;
+    }
+    
+    .eh-visual img {
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+/* === BEFORE AND AFTER CONTAINER FULL WIDTH ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Make before and after container full width on mobile */
+    .kr8-ba-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* === PICKUP & DROPOFF IMAGE FULL WIDTH ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Target the specific pickup & dropoff image card */
+    .kr8-img-card:has(.kr8-meta h4:contains("PICKUP & DROPOFF")) {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Alternative selector for the pickup/dropoff image */
+    .kr8-img-card:nth-child(1) .kr8-vis[style*="process5.webp"],
+    .kr8-vis[style*="process5.webp"] {
+        width: 100% !important;
+        height: 300px !important; /* Maintain reasonable height */
+        background-size: 100% auto !important; /* Cover width, auto height */
+        background-position: center top !important; /* Crop from top */
+        background-repeat: no-repeat !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Ensure the card container is also full width */
+    .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 0 20px 0 !important;
+    }
+}
+
+/* === CENTER PROCESS SECTION ROWS AND IMAGES ON INDEX MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - center the entire process track */
+    body.index .eh-track {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Center all process cards on index mobile */
+    body.index .eh-card {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    /* Center the intro panel */
+    body.index .eh-intro-panel {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Center the visual containers and images */
+    body.index .eh-visual {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    body.index .eh-visual img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+    
+    /* Center the content sections */
+    body.index .eh-content {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.index .eh-content h3,
+    body.index .eh-content p {
+        text-align: center !important;
+    }
+    
+    /* Center the header elements */
+    body.index .eh-header {
+        text-align: center !important;
+    }
+    
+    body.index .eh-header h2,
+    body.index .eh-sub,
+    body.index .scroll-indicator {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* === LEFT JUSTIFY PROCESS HEADER TEXT ON INDEX MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - left justify process header text only */
+    body.index .eh-header h2 {
+        text-align: left !important;
+    }
+    
+    body.index .eh-sub {
+        text-align: left !important;
+    }
+    
+    /* Keep all other centering intact - only change text alignment */
+    body.index .eh-header {
+        text-align: center !important; /* Keep element centered */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.index .eh-header h2 {
+        text-align: left !important; /* Override to left */
+    }
+    
+    body.index .eh-sub {
+        text-align: left !important; /* Override to left */
+    }
+    
+    /* Keep scroll indicator centered */
+    body.index .scroll-indicator {
+        text-align: center !important;
+    }
+}
+
+/* === LEFT JUSTIFY WEATHERED TO SHOWROOM TEXT ON INDEX MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - left justify weathered to showroom text only */
+    body.index .kr8-main-headline {
+        text-align: left !important;
+    }
+    
+    body.index .kr8-main-subtext {
+        text-align: left !important;
+    }
+    
+    /* Keep all containers and elements positioned as they were */
+    body.index .kr8-ba-main-intro {
+        text-align: center !important; /* Keep container centered */
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Override text alignment only */
+    body.index .kr8-ba-main-intro .kr8-main-headline {
+        text-align: left !important;
+    }
+    
+    body.index .kr8-ba-main-intro .kr8-main-subtext {
+        text-align: left !important;
+    }
+}
+
+
+/* === COMPLETELY REMOVE MOBILE CLOSE MENU BUTTON === */
+
+@media (max-width: 767px) {
+    /* Completely hide the close menu button on mobile */
+    .menu-close-container {
+        display: none !important;
+    }
+    
+    .menu-close-container .nav-close-btn {
+        display: none !important;
+    }
+}
+
+/* === CENTER FOOTER LOGO AND TAGLINE ON INDEX MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - center footer logo and container */
+    body.index .footer-top {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Center the evolve logo */
+    body.index .footer-logo {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+    
+    /* Center the tagline text */
+    body.index .footer-tagline {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+    
+    /* Center the container div that holds logo and tagline */
+    body.index .footer-top > div {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* === TABLET HERO SECTION LAYOUT REVERSAL ON INDEX === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - reverse hero layout on tablet */
+    body.index .home-hero {
+        flex-direction: column !important;
+        display: flex !important;
+    }
+    
+    /* Move WebGL/video to top */
+    body.index .home-hero-image {
+        order: 1 !important;
+        height: 50vh !important;
+        min-height: 400px !important;
+        width: 100% !important;
+    }
+    
+    /* Move hero text to bottom */
+    body.index .home-hero-content {
+        order: 2 !important;
+        padding: 40px 24px 60px !important;
+        background: transparent !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        justify-content: flex-end !important;
+
+        text-align: left !important;
+    }
+    
+    /* Ensure text is justified at bottom */
+    body.index .home-hero-content .hero-intro-unified,
+    body.index .home-hero-content h1,
+    body.index .home-hero-content h2,
+    body.index .home-hero-content p {
+        margin-bottom: 0 !important;
+        vertical-align: bottom !important;
+    }
+    
+    /* Remove any background overlays */
+    body.index .home-hero-content,
+    body.index .hero-intro-unified {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+}
+
+/* === LEFT JUSTIFY HERO TEXT ON INDEX TABLET === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - left justify hero kicker text */
+    body.index .hero-kicker {
+        text-align: left !important;
+    }
+    
+    /* Index page only - left justify hero intro subtext */
+    body.index .hero-intro-unified {
+        text-align: left !important;
+    }
+    
+    /* Keep other hero elements centered if needed */
+    body.index .hero-title-unified {
+        text-align: center !important; /* Keep title centered */
+    }
+    
+    /* Keep hero buttons centered */
+    body.index .hero-buttons {
+        text-align: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* === LEFT ALIGN HERO TITLE ON INDEX TABLET === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - left align hero title */
+    body.index .hero-title-unified.hero-title-highlight.hero-title-interactive {
+        text-align: left !important;
+    }
+}
+
+/* === REMOVE MARGIN AND PADDING FROM HERO INTRO ON INDEX TABLET === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - remove margin-left from hero intro */
+    body.index .hero-intro-unified {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* === INCREASE SLOGAN TEXT SIZE BY 30% ON INDEX TABLET === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - increase slogan text size by 30% */
+    body.index .kr8-slogan-sub {
+        font-size: calc(1em * 1.3) !important; /* 30% increase */
+    }
+    
+    /* Also increase the highlight span size */
+    body.index .kr8-slogan-sub .kr8-highlight {
+        font-size: inherit !important; /* Inherit the 30% increase */
+    }
+}
+
+/* === INCREASE TEXT SIZE BY 2X ON MOBILE AND TABLET === */
+
+/* Mobile only - make "GET A QUOTE REQUEST PICKUP" 2x bigger */
+@media (max-width: 767px) {
+    body.index .kr8-cta-title {
+        font-size: 2em !important; /* 2x bigger */
+    }
+}
+
+/* Tablet only - make "MODERNISED SURFACE RESTORATION" 2x bigger */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body.index .kr8-opt1-headline {
+        font-size: 2em !important; /* 2x bigger */
+    }
+}
+
+/* === MODIFY CTA TITLE TEXT ON TABLET === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - modify CTA title text on tablet */
+    body.index .kr8-cta-title br {
+        display: none !important; /* Hide the line break */
+    }
+    
+    /* Add period after "GET A QUOTE" using CSS */
+    body.index .kr8-cta-title {
+        font-size: 3em !important; /* Keep the 3x size */
+    }
+    
+    body.index .kr8-cta-title::after {
+        content: ''; /* Remove any existing content */
+    }
+    
+    /* Use CSS to replace the text content */
+    body.index .kr8-cta-title {
+        font-size: 0; /* Hide original text */
+        line-height: 1;
+    }
+    
+    body.index .kr8-cta-title::before {
+        content: "GET A QUOTE. REQUEST PICKUP";
+        font-size: 2em; /* Restore the 2x size */
+        display: block;
+        white-space: nowrap; /* Ensure single line */
+    }
+}
+
+/* === UPDATE CTA TITLE TEXT ON TABLET - FIX DUPLICATE === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Index page only - update CTA title text on tablet */
+    body.index .kr8-cta-title br {
+        display: block !important; /* Show the line break */
+    }
+    
+    /* Remove the CSS replacement and use original text with modifications */
+    body.index .kr8-cta-title {
+        font-size: 3em !important; /* Keep the 3x size */
+        font-size: 2em !important;
+        visibility: visible !important;
+    }
+    
+    /* Remove the CSS content replacement */
+    body.index .kr8-cta-title::before {
+        display: none !important;
+    }
+    
+    /* Hide any duplicate/smaller versions */
+    body.index .kr8-cta-col-text .kr8-cta-title:not(:first-child) {
+        display: none !important;
+    }
+    
+    /* Ensure only the first/largest instance is visible */
+    body.index .kr8-cta-col-text > .kr8-cta-title {
+        display: block !important;
+    }
+}
+
+/* === ADD PADDING ABOVE "FROM ASSESSMENT TO FINISH" ON INDEX MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - add 10px padding above "FROM ASSESSMENT TO FINISH" */
+    body.index .eh-sub {
+        padding-top: 10px !important;
+    }
+}
+
+/* === MAKE EH-TRACK DISPLAY VERTICALLY ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - make eh-track display vertically like normal scrolling */
+    body.index .eh-track {
+        display: block !important; /* Override flex to block */
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        transform: none !important;
+        position: static !important;
+    }
+    
+    /* Make each card display as block elements stacked vertically */
+    body.index .eh-intro-panel,
+    body.index .eh-card {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        transform: none !important;
+        margin-bottom: 40px !important; /* Space between stacked items */
+        float: none !important;
+        clear: both !important;
+    }
+    
+    /* Ensure no horizontal positioning */
+    body.index .eh-intro-panel {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+    }
+    
+    body.index .eh-card {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+    }
+}
+
+/* === ADD PADDING AND REMOVE HEIGHT CONSTRAINTS ON EH-TRACK MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - add padding to first and last elements in eh-track */
+    body.index .eh-track {
+        padding-top: 40px !important; /* Space above first element */
+        padding-bottom: 60px !important; /* Space below last element */
+        min-height: auto !important; /* Remove min-height constraints */
+        max-height: none !important; /* Remove max-height constraints */
+        height: auto !important; /* Let content determine height */
+    }
+    
+    /* Ensure first element (intro panel) has top spacing */
+    body.index .eh-intro-panel:first-child {
+        padding-top: 20px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure last element (final card) has bottom spacing */
+    body.index .eh-card:last-child {
+        padding-bottom: 40px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Remove any height constraints on all elements */
+    body.index .eh-intro-panel,
+    body.index .eh-card {
+        min-height: auto !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    
+    /* Ensure images are not constrained */
+    body.index .eh-visual,
+    body.index .eh-visual img {
+        min-height: auto !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+}
+
+/* === ADJUST WIDTH AND REMOVE VERTICAL CONSTRAINTS ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - adjust width and remove vertical constraints */
+    body.index .eh-pin-spacer {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        position: relative !important;
+        transform: none !important;
+    }
+    
+    body.index .evolve-horizon-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        position: relative !important;
+        transform: none !important;
+        clip-path: none !important;
+        -webkit-clip-path: none !important;
+    }
+    
+    /* Ensure no clipping on any child elements */
+    body.index .eh-pin-spacer *,
+    body.index .evolve-horizon-wrap * {
+        overflow: visible !important;
+        clip: auto !important;
+        clip-path: none !important;
+        -webkit-clip-path: none !important;
+    }
+    
+    /* Remove any fixed heights or constraints on nested elements */
+    body.index .eh-pin-spacer .eh-pin-spacer,
+    body.index .evolve-horizon-wrap .eh-track,
+    body.index .evolve-horizon-wrap .eh-intro-panel,
+    body.index .evolve-horizon-wrap .eh-card {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+}
+
+/* === MAKE PROCESS5.WEBP MATCH OTHER IMAGES EXACTLY ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - make process5.webp match other kr8-img-card images */
+    body.index .kr8-img-card .kr8-vis[style*="process5.webp"],
+    body.index .kr8-vis[style*="process5.webp"] {
+        width: 100% !important;
+        height: 200px !important; /* Match standard kr8-img-card height */
+        min-height: 200px !important;
+        max-height: 200px !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        object-fit: cover !important;
+        overflow: hidden !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Ensure the container also matches */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
+        height: 310px !important; /* Match standard kr8-img-card height */
+        min-height: 310px !important;
+        max-height: 310px !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Match the visual container size */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
+        height: 200px !important;
+        min-height: 200px !important;
+        max-height: 200px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Ensure meta section matches other cards */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-meta {
+        height: 110px !important; /* Remaining height for meta */
+        min-height: 110px !important;
+        max-height: 110px !important;
+        flex-shrink: 0 !important;
+        padding: 8px 12px !important;
+    }
+}
+
+/* === MATCH PROCESS5.WEBP TO PROCESS4.WEBP CONSTRAINTS ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - make process5.webp match process4.webp exactly */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: 310px !important;
+        min-height: 310px !important;
+        max-height: 310px !important;
+    }
+    
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover !important;
+        flex-shrink: 0 !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-meta {
+        padding: 8px 12px !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+        overflow: visible !important;
+    }
+}
+
+/* === MAKE PROCESS5.WEBP WIDER TO MATCH OTHER IMAGES ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - make process5.webp wider to match other images exactly */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
+        width: 100% !important;
+        height: 200px !important; /* Keep exact same height */
+        object-fit: cover !important;
+        flex-shrink: 0 !important;
+        background-size: 120% auto !important; /* Make image wider */
+        background-position: center top !important; /* Clip from top */
+        background-repeat: no-repeat !important;
+        overflow: hidden !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Also apply to direct selector */
+    body.index .kr8-vis[style*="process5.webp"] {
+        width: 100% !important;
+        height: 200px !important;
+        background-size: 120% auto !important; /* 120% width to fill better */
+        background-position: center top !important; /* Clip from top as needed */
+        background-repeat: no-repeat !important;
+        object-fit: cover !important;
+        overflow: hidden !important;
+    }
+}
+
+/* === ADJUST PROCESS5.WEBP HEIGHT TO FILL BOX COMPLETELY ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - adjust process5.webp height to fill box completely */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) .kr8-vis {
+        width: 100% !important;
+        height: 220px !important; /* Increased height to fill box */
+        object-fit: cover !important;
+        flex-shrink: 0 !important;
+        background-size: 120% auto !important; /* Keep wider image */
+        background-position: center top !important; /* Clip from top */
+        background-repeat: no-repeat !important;
+        overflow: hidden !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Also apply to direct selector */
+    body.index .kr8-vis[style*="process5.webp"] {
+        width: 100% !important;
+        height: 220px !important; /* Increased to fill box */
+        background-size: 120% auto !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+        object-fit: cover !important;
+        overflow: hidden !important;
+    }
+    
+    /* Adjust container height to match */
+    body.index .kr8-img-card:has(.kr8-vis[style*="process5.webp"]) {
+        height: 330px !important; /* 220px image + 110px meta */
+        min-height: 330px !important;
+        max-height: 330px !important;
+    }
+}
+
+/* === MATCH PROCESS5.WEBP CARD TO PROCESS4.WEBP CARD EXACTLY ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - make process5.webp card identical to process4.webp card */
+    
+    /* Target the process5.webp card (3rd kr8-img-card) */
+    body.index .kr8-img-card:nth-child(3) {
+        /* Apply exact same styles as process4.webp card (2nd kr8-img-card) */
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: 310px !important; /* Same as standard */
+        min-height: 310px !important;
+        max-height: 310px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        position: relative !important;
+        background: rgba(10, 10, 10, 0.6) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Match the visual container exactly */
+    body.index .kr8-img-card:nth-child(3) .kr8-vis {
+        width: 100% !important;
+        height: 200px !important; /* Same as standard */
+        object-fit: cover !important;
+        flex-shrink: 0 !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        overflow: hidden !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Match the meta container exactly */
+    body.index .kr8-img-card:nth-child(3) .kr8-meta {
+        padding: 8px 12px !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+        overflow: visible !important;
+        background: transparent !important;
+        border: none !important;
+        height: 110px !important; /* Remaining height */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Match the text styling exactly */
+    body.index .kr8-img-card:nth-child(3) .kr8-meta h4 {
+        font-family: 'Neue Montreal', sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        color: #ffffff !important;
+        margin: 0 0 8px 0 !important;
+        padding: 0 !important;
+    }
+    
+    body.index .kr8-img-card:nth-child(3) .kr8-meta p {
+        font-family: 'Neue Montreal', sans-serif !important;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Ensure no unique styling overrides */
+    body.index .kr8-img-card:nth-child(3) .kr8-vis[style*="process5.webp"] {
+        background-size: cover !important;
+        background-position: center center !important;
+        height: 200px !important;
+        width: 100% !important;
+    }
+}
+
+/* === EXPAND PROCESS5.WEBP TO TOP OF FRAME AND MAKE WIDER ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - expand process5.webp to top and make wider */
+    body.index .kr8-img-card:nth-child(3) .kr8-vis {
+        position: relative !important;
+        top: -5px !important; /* Shift upwards to eliminate space */
+        transform: translateY(-5px) !important;
+        height: 210px !important; /* Increase height to fill frame */
+        background-size: 130% auto !important; /* Make wider */
+        background-position: center top !important; /* Anchor to top */
+        margin-top: -10px !important; /* Remove top margin */
+        padding-top: 0 !important;
+    }
+    
+    /* Also apply to direct selector for process5.webp */
+    body.index .kr8-vis[style*="process5.webp"] {
+        position: relative !important;
+        top: -5px !important;
+        transform: translateY(-5px) !important;
+        height: 210px !important;
+        background-size: 130% auto !important;
+        background-position: center top !important;
+        margin-top: -10px !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Adjust container to accommodate shifted image */
+    body.index .kr8-img-card:nth-child(3) {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+    }
+    
+    /* Ensure meta section adjusts to maintain total height */
+    body.index .kr8-img-card:nth-child(3) .kr8-meta {
+        margin-top: -5px !important; /* Compensate for shifted image */
+        height: 105px !important; /* Adjust to maintain total 310px */
+    }
+}
+
+/* === CENTER MODERNISED SURFACE RESTORATION SECTION ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - center the entire modernised surface restoration section */
+    body.index .kr8-opt1-headline {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.index .kr8-opt1-actions {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 16px !important;
+    }
+    
+    body.index .kr8-opt1-actions .btn-primary,
+    body.index .kr8-opt1-actions .btn-secondary {
+        margin: 0 auto !important;
+        display: inline-block !important;
+    }
+    
+    body.index .kr8-opt1-subhead {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.index .kr8-opt1-body {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.index .kr8-opt1-body p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* === CENTER KR8-OPT1-INTEL KR8-ANIM-ITEM ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - center kr8-opt1-intel kr8-anim-item div */
+    body.index .kr8-opt1-intel.kr8-anim-item {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        float: none !important;
+        clear: both !important;
+    }
+    
+    /* Ensure the container also allows centering */
+    body.index .kr8-opt1-container {
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    /* Remove any animation positioning that might interfere */
+    body.index .kr8-opt1-intel.kr8-anim-item {
+        animation: none !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* Ensure all child elements are centered too */
+    body.index .kr8-opt1-intel.kr8-anim-item > * {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Override any specific positioning from kr8-anim-item */
+    body.index .kr8-anim-item.kr8-opt1-intel {
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+    }
+}
+
+/* === ADD 2PX MARGIN TO KR8-OPT1-GRID KR8-ANIM-GRID ON MOBILE === */
+
+@media (max-width: 767px) {
+    /* Index page only - add 2px margin left and right inside kr8-opt1-grid kr8-anim-grid */
+    body.index .kr8-opt1-grid.kr8-anim-grid {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Ensure the grid items respect the margin */
+    body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }
