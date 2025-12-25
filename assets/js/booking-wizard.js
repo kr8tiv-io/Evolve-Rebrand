@@ -11,11 +11,21 @@ const wizardState = {
     files: []
 };
 
+// Navigation Guard State
+let isNavigating = false;
+
 // Wait for DOM to be ready
 let modal, modalContainer, closeBtn, steps, stepIndicators, nextBtn, backBtn, submitBtn;
 
+// Listen for navigation events
+window.addEventListener('beforeunload', () => {
+    isNavigating = true;
+});
+
 // Open Modal Function (Available Immediately)
 function openModal() {
+    if (isNavigating) return; // Prevent opening during navigation
+    
     if (!modal) {
         modal = document.getElementById('booking-modal');
     }

@@ -474,8 +474,161 @@
             .bento-glass-panel {
                 transform: translateY(0);
                 opacity: 1;
-                position: relative;
-                margin-top: 20px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 40px);
+                margin: 0 20px;
+                text-align: center;
+            }
+            
+            /* Center header text on mobile */
+            .bento-header {
+                text-align: center !important;
+            }
+            
+            .kr8-opt1-headline {
+                text-align: center !important;
+            }
+            
+            .kr8-main-subtext {
+                text-align: center !important;
+            }
+            
+            /* Remove background from neighborhood-glass-card on mobile */
+            .neighborhood-glass-card {
+                background: transparent !important;
+                backdrop-filter: none !important;
+            }
+            
+            /* Add padding above bento-grid on mobile */
+            .bento-grid {
+                padding-top: 20px !important;
+            }
+            
+            /* Hide bento-anchor on mobile */
+            .bento-anchor {
+                display: none !important;
+            }
+            
+            /* Center neighborhood-kicker on mobile */
+            .neighborhood-kicker {
+                text-align: center !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            /* Add padding to elements-section on mobile */
+            .elements-section {
+                padding: 1% !important;
+            }
+            
+            .elements-glass-container {
+                margin: 1% !important;
+                padding: 1% !important;
+            }
+            
+            /* Center everything inside elements-layout on mobile */
+            .elements-layout {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .elements-header {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .elements-headline {
+                text-align: center !important;
+            }
+            
+            .elements-subheadline {
+                text-align: center !important;
+            }
+            
+            .elements-feature-img {
+                display: block !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+            
+            .elements-accordion {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .elements-accordion-item {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .elements-accordion-trigger {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .elements-accordion-number {
+                text-align: center !important;
+            }
+            
+            .elements-accordion-title {
+                text-align: center !important;
+            }
+            
+            .elements-accordion-content {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .elements-accordion-text {
+                text-align: center !important;
+            }
+            
+            /* Add padding to RESIDENTIAL APPLICATIONS headline on mobile */
+            .kr8-opt1-headline {
+                padding-top: 20px !important;
+            }
+            
+            /* Change zig-content padding to 10px on mobile */
+            .zig-content {
+                padding: 10px !important;
+            }
+            
+            /* Gearhead section mobile changes */
+            .gearhead-grid {
+                padding: 0 5px !important;
+            }
+            
+            .kr8-btn.primary {
+                display: block !important;
+                margin: 0 auto !important;
+                text-align: center !important;
+            }
+            
+            /* Stack automotive frames vertically on mobile */
+            .gearhead-grid .kr8-img-card {
+                grid-column: 1 / -1 !important;
+                width: 100% !important;
             }
             .bento-content {
                 position: relative;
@@ -1029,6 +1182,11 @@
             .zig-row { grid-template-columns: 1fr; }
             .zig-row:nth-child(even) .zig-img { order: -1; } /* Keep image on top on mobile */
             .gearhead-grid { grid-template-columns: 1fr; }
+            
+            /* Change padding for diagnostic section on mobile */
+            #diagnostic.kr8-unified-block.bento-section {
+                padding: 20px 0 !important;
+            }
         }
     </style>
 </head>

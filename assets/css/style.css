@@ -4618,6 +4618,12 @@ button.footer-link:hover::after {
 
 /* === 1. HEADER & NAVIGATION: Precision Alignment === */
 @media (max-width: 768px) {
+    /* Force header visibility on mobile - override CSS loading issues */
+    .site-header[data-css-hide] {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
     /* Safe Area Protection - Prevents logo/menu from hitting phone notch */
     .site-header {
         padding: max(16px, env(safe-area-inset-top)) 24px 16px !important;
@@ -5309,9 +5315,11 @@ button.footer-link:hover::after {
     
     /* For absolute-positioned panels - center them */
     .bento-glass-panel {
-        left: 1% !important;
-        right: 1% !important;
-        width: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 40px) !important;
+        margin: 0 20px !important;
+        text-align: center !important;
     }
 }
 
