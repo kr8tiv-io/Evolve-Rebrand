@@ -257,6 +257,38 @@
                 min-height: 100%;
                 height: 100%;
             }
+            
+            .footer-tagline {
+                text-align: left !important;
+                line-height: 1 !important;
+            }
+            
+            .footer-tagline br {
+                display: none;
+            }
+            
+            .footer-tagline::after {
+                content: "Commercial Fleet Maintenance, Log Home Restoration & Property Management Solutions.";
+                display: block;
+            }
+            
+            .footer-tagline {
+                font-size: 0;
+            }
+            
+            .footer-tagline::before {
+                content: "Commercial Fleet Maintenance, Log Home Restoration & Property Management Solutions.";
+                font-size: initial;
+                white-space: normal;
+            }
+            
+            .cta-banner {
+                margin-bottom: 0px !important;
+            }
+            
+            .comm-hero {
+                margin-bottom: 10px !important;
+            }
         }
     </style>
 
@@ -966,6 +998,40 @@
                 padding: 12px 24px;
             }
         }
+        
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .comm-hero {
+                margin-bottom: 0px !important;
+            }
+            
+            .service-cards .svc-img {
+                margin-bottom: 10px !important;
+            }
+            
+            .cta-banner {
+                margin-bottom: 0px !important;
+            }
+            
+            .footer-tagline {
+                line-height: 1 !important;
+                white-space: pre-wrap;
+            }
+            
+            .footer-tagline br {
+                display: block;
+                margin: 0;
+            }
+            
+            .footer-tagline br::before {
+                content: " ";
+                white-space: pre;
+            }
+            
+            .footer-tagline br::after {
+                content: " ";
+                white-space: pre;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1293,8 +1359,11 @@
             <div class="cta-overlay"></div>
             <div class="cta-content kr8-anim-item">
                 <h2 class="kr8-t2 fs-48" style="margin-bottom: 20px;">READY TO RESTORE?</h2>
-                <p class="fs-18 fw-300" style="color: #ccc; margin-bottom: 40px;">
-                    Send us photos of your project or schedule a site assessment. We provide fast, detailed quotes for commercial and industrial jobs.
+                <p class="fs-18 fw-300" style="color: #ccc; margin-bottom: 40px; text-align: center;">
+                    Send us photos of your project<br>
+                    or schedule a site assessment.<br>
+                    We provide fast, detailed quotes for<br>
+                    commercial and industrial jobs.
                 </p>
                 <div class="cta-actions">
                     <a href="mailto:info@evolve.contractors" class="kr8-btn primary">REQUEST COMMERCIAL ASSESSMENT</a>
@@ -1308,7 +1377,7 @@
                 <div class="footer-top">
                     <div>
                         <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="footer-logo" loading="lazy" decoding="async" width="600" height="509">
-                        <p class="footer-tagline">Commercial Fleet Maintenance, Log Home Restoration & Property Management Solutions.</p>
+                        <p class="footer-tagline">Commercial Fleet Maintenance<br>Log Home Restoration & Property Management Solutions.</p>
                     </div>
                     <button onclick="openBookingModal()" class="footer-cta" style="background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;">GET AN ESTIMATE</button>
                 </div>
