@@ -12,6 +12,31 @@
         clip-path: none !important;
         transition: opacity 0.3s ease;
     }
+
+/* === INDEX TABLET: NORMALIZE PICKUP & DROPOFF CARD === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    body.index .kr8-opt1-grid .kr8-img-card:nth-child(5) {
+        padding: 18px !important;
+        background: rgba(7, 7, 7, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 18px !important;
+        box-sizing: border-box !important;
+    }
+
+    body.index .kr8-opt1-grid .kr8-img-card:nth-child(5) .kr8-vis {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        background-size: cover !important;
+        background-position: center !important;
+        margin: 0 !important;
+    }
+
+    body.index .kr8-opt1-grid .kr8-img-card:nth-child(5) .kr8-meta {
+        margin-top: 16px !important;
+    }
+}
 }
 
 /* Hide line break on desktop by default */
@@ -1691,23 +1716,13 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 }
 #safety.kr8-unified-block {
     background-color: #000;
-    background-image:
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0) 15vw,
-            rgba(0, 0, 0, 0) calc(100% - 15vw),
-            rgba(0, 0, 0, 0.95) 100%
-        ),
-        url('../../images/backgrounds/industrialbackground1.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    min-height: 61vh;
 }
 .kr8-unified-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.9) 50%, rgba(5,5,5,0.92) 100%);
+position: absolute;
+inset: 0;
+background: linear-gradient(180deg, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.9) 50%, rgba(5,5,5,0.92) 100%);
+pointer-events: none;
     pointer-events: none;
 }
 .kr8-unified-inner {
@@ -3481,7 +3496,6 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 
 /* MOBILE */
 .mobile-toggle { display: none; }
-.nav-close-btn { display: none; }
 
 @media (max-width: 900px) {
     .info-grid, .grid-features, .services-section, .process-steps { grid-template-columns: 1fr; }
@@ -3501,31 +3515,6 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     }
     .nav-links.active { right: 0; }
     
-    /* Mobile menu close button */
-    .nav-close-btn {
-        display: block;
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        color: rgba(255, 255, 255, 0.7);
-        font-family: 'Neue Montreal', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 12px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    .nav-close-btn:hover,
-    .nav-close-btn:focus {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: #39FF14;
-        color: #39FF14;
-    }
 }
 @media (max-width: 600px) {
     .footer-grid { grid-template-columns: 1fr; }
@@ -5716,22 +5705,68 @@ button.footer-link:hover::after {
    ============================================================================ */
 
 /* === 1. STRUCTURAL SPINE & VERTICAL SPACING === */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /* Container Reset - 100% breathing room */
     .kr8-unified-inner,
     .home-hero-content,
     .bento-section,
     .kr8-opt1-container,
     .kr8-single-content,
-    .kr8-combo-wrapper,
-    .kr8-opt1-wrapper,
-    .mobile-hero-content {
+    .eh-track,
+    .eh-intro-panel {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
-    
+
+    /* Index page only: add 10px left padding to eh-intro-panel */
+    body.index .eh-intro-panel {
+        padding-left: 30px !important;
+    }
+
+    /* Industrial page safety section: add 5px padding to rows on mobile */
+    body.industrial #safety .stat-grid {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    /* Industrial page: add 2px padding to fw-300 text inside eng-card-content on mobile */
+    body.industrial .eng-card-content .fw-300 {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+    }
+
+    /* Industrial page footer: show only logo and tagline on mobile */
+    body.industrial .site-footer .footer-cta,
+    body.industrial .site-footer .footer-divider,
+    body.industrial .site-footer .footer-grid,
+    body.industrial .site-footer .footer-locations,
+    body.industrial .site-footer .footer-bottom {
+        display: none !important;
+    }
+
+    body.industrial .site-footer .footer-top {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 40px 20px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    body.industrial .site-footer .footer-logo,
+    body.industrial .site-footer .footer-tagline {
+        display: block !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
     /* Industrial Header Spacing Fix */
     .kr8-top-actions,
     .kr8-opt1-actions {
@@ -5880,8 +5915,8 @@ button.footer-link:hover::after {
     .kr8-opt1-container h1,
     .kr8-opt1-container h2,
     .kr8-opt1-container h3 {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+        padding-left: 2px !important;
+        padding-right: 2px !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
@@ -6073,6 +6108,11 @@ button.footer-link:hover::after {
         margin-bottom: 0 !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
+    }
+
+    /* Hide the testimonial combo block on mobile when imagery is missing */
+    body.index .kr8-combo-wrapper {
+        display: none !important;
     }
     
     /* All major containers - 10px bottom spacing */
@@ -6913,6 +6953,34 @@ button.footer-link:hover::after {
         text-align: center !important;
     }
     
+    /* Index page only: Center "LOOKING FOR A SPECIFIC APPLICATION?" text on mobile */
+    body.index .kr8-summary-box .kr8-backlight-hover {
+        text-align: center !important;
+        width: 100% !important;
+        display: block !important;
+    }
+    
+    /* Index page only: Center placeholder text inside Special Circumstances textarea on mobile */
+    body.index .input-wrapper:has(#special-circumstances) {
+        align-items: stretch !important;
+    }
+
+    body.index #special-circumstances {
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        min-height: 120px !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Index page only: Center contact name/email icons vertically */
+    body.index .input-wrapper:has(#contact-name) .input-icon,
+    body.index .input-wrapper:has(#contact-email) .input-icon {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+    
     /* Index page only: Fix kr8-img-card styling on mobile */
     body.index .kr8-img-card {
         display: flex !important;
@@ -7328,6 +7396,16 @@ button.footer-link:hover::after {
         background-image: url('../../images/backgrounds/background5-800.webp') !important;
     }
 
+    body.index .kr8-marquee-wrapper::after {
+        height: 10vh !important;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 60%, #000 100%) !important;
+    }
+
+    body.index .eh-pin-spacer::before,
+    body.index .eh-pin-spacer::after {
+        height: 5vh !important;
+    }
+
     .eh-pin-spacer {
         background-image: url('../../images/backgrounds/background3-800.webp') !important;
     }
@@ -7337,16 +7415,31 @@ button.footer-link:hover::after {
         background-image: url('../../images/backgrounds/background4-800.webp') !important;
     }
 
+    body.index .kr8-before-after-module::before,
+    body.index .kr8-before-after-module::after {
+        display: none !important;
+    }
+
     .kr8-unified-overlay {
         background-image: url('../../images/backgrounds/background1-800.webp') !important;
     }
 
-    .kr8-services-overlay {
-        background-image: url('../../images/backgrounds/background2-800.webp') !important;
+/* === TIGHTEN CTA TITLES (Desktop) === */
+@media (max-width: 640px) {
+    .kr8-viewport-col {
+        min-height: 560px !important;
     }
 }
 
-/* === TIGHTEN CTA TITLES (Desktop) === */
+@media (max-width: 640px) {
+    .evolve-summary-label {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+}
+
 @media (min-width: 768px) {
     .kr8-cta-title {
         line-height: 1.1 !important;
@@ -7424,54 +7517,6 @@ button.footer-link:hover::after {
         max-width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-    }
-}
-
-/* === MOBILE MENU CLOSE BUTTON FIXES === */
-
-/* Mobile (max-width: 767px): Reduce size by 60% and center over menu items */
-@media (max-width: 767px) {
-    .menu-close-container {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 102;
-    }
-    
-    .menu-close-container .nav-close-btn {
-        transform: scale(0.4); /* Reduce size by 60% */
-        font-size: 4.8px !important; /* 12px * 0.4 = 4.8px */
-        padding: 4.8px 8px !important; /* 12px 20px * 0.4 */
-        border-radius: 3.2px !important; /* 8px * 0.4 */
-    }
-}
-
-/* Tablet (min-width: 768px and max-width: 1024px): Center above menu items */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .menu-close-container {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 102;
-    }
-    
-    .menu-close-container .nav-close-btn {
-        transform: scale(0.7); /* Slightly smaller for tablet */
-        font-size: 8.4px !important; /* 12px * 0.7 */
-        padding: 8.4px 14px !important; /* 12px 20px * 0.7 */
-    }
-}
-
-/* Desktop (min-width: 1025px): Hide close button completely */
-@media (min-width: 1025px) {
-    .menu-close-container {
-        display: none !important;
-    }
-    
-    .menu-close-container .nav-close-btn {
-        display: none !important;
     }
 }
 
@@ -7744,11 +7789,6 @@ button.footer-link:hover::after {
     }
     
     /* Ensure the close button doesn't affect the flow of nav items */
-    .menu-close-container .nav-close-btn {
-        position: relative !important;
-        display: block !important;
-        margin: 0 auto !important;
-    }
 }
 
 /* === INDEX PAGE MOBILE HERO FIX === */
@@ -8207,10 +8247,11 @@ button.footer-link:hover::after {
     }
 }
 
-/* Tablet only - make "MODERNISED SURFACE RESTORATION" 2x bigger */
+/* Tablet only - make "MODERNISED SURFACE RESTORATION" 2x bigger & centered */
 @media (min-width: 768px) and (max-width: 1024px) {
     body.index .kr8-opt1-headline {
-        font-size: 2em !important; /* 2x bigger */
+        font-size: calc(var(--fs-display-cta) * 2) !important;
+        text-align: center !important;
     }
 }
 
@@ -8273,6 +8314,20 @@ button.footer-link:hover::after {
     /* Ensure only the first/largest instance is visible */
     body.index .kr8-cta-col-text > .kr8-cta-title {
         display: block !important;
+    }
+
+    body.index .kr8-cta-title {
+        text-align: center !important;
+        font-size: calc(var(--fs-display-cta) * 2) !important;
+    }
+
+    body.index .kr8-cta-col-text {
+        text-align: center !important;
+    }
+
+    body.index .kr8-cta-col-text .kr8-rating {
+        font-size: 1.6em !important;
+        justify-content: center !important;
     }
 }
 
@@ -8429,6 +8484,10 @@ button.footer-link:hover::after {
         text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+    
+    body.index .kr8-opt1-subhead {
+        margin-top: 10px !important;
     }
     
     body.index .kr8-opt1-actions {
@@ -8759,5 +8818,128 @@ body.index .kr8-vis {
 
     body.index .kr8-opt1-grid.kr8-anim-grid .kr8-img-card:nth-child(6) {
         order: 5 !important;
+    }
+}
+
+/* === PIN-SPACER MOBILE ADJUSTMENT === */
+@media (max-width: 767px) {
+    .pin-spacer.pin-spacer-eh-scroll {
+        padding: 0 !important;
+        height: 100% !important;
+    }
+
+    .pin-spacer.pin-spacer-eh-scroll > .eh-pin-spacer {
+        height: 100% !important;
+    }
+}
+
+/* === TABLET HERO REORDER & GRADIENT === */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .home-hero,
+    .comm-hero,
+    .res-hero,
+    .ind-hero {
+        position: relative !important;
+        display: block !important;
+        padding: 0 !important;
+        min-height: 100vh !important;
+        overflow: hidden !important;
+    }
+
+    .home-hero-image,
+    .comm-hero-image,
+    .res-hero-img,
+    .ind-hero-img {
+        position: relative !important;
+        width: 100% !important;
+        height: 100vh !important;
+        min-height: 520px !important;
+        margin: 0 !important;
+        z-index: 1 !important;
+    }
+
+    .home-hero-image::after,
+    .comm-hero-image::after,
+    .res-hero-img::after,
+    .ind-hero-img::after {
+        display: none !important;
+    }
+
+    .home-hero-content,
+    .comm-hero-content,
+    .res-hero-text,
+    .ind-hero-content {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        padding: 30px 20px 40px !important;
+        box-sizing: border-box !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        z-index: 2 !important;
+    }
+
+    .home-hero-content .hero-kicker-block,
+    .comm-hero-content .hero-kicker-block,
+    .res-hero-text .hero-kicker-block,
+    .ind-hero-content .hero-kicker-block,
+    .home-hero-content .hero-title-unified,
+    .comm-hero-content .hero-title-unified,
+    .res-hero-text .hero-title-unified,
+    .ind-hero-content .hero-title-unified {
+        width: 100% !important;
+    }
+
+    .home-hero-content .hero-intro-unified,
+    .comm-hero-content .hero-intro-unified,
+    .res-hero-text .hero-intro-unified,
+    .ind-hero-content .hero-intro-unified {
+        max-width: 90% !important;
+    }
+
+    .home-hero-content .hero-buttons,
+    .comm-hero-content .hero-buttons,
+    .res-hero-text .hero-buttons,
+    .ind-hero-content .hero-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .home-hero-content h1,
+    .home-hero-content h2,
+    .home-hero-content p,
+    .comm-hero-content h1,
+    .comm-hero-content h2,
+    .comm-hero-content p,
+    .res-hero-text h1,
+    .res-hero-text h2,
+    .res-hero-text p,
+    .ind-hero-content h1,
+    .ind-hero-content h2,
+    .ind-hero-content p {
+        position: relative !important;
+        z-index: 3 !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    }
+
+    .home-hero-content::before,
+    .comm-hero-content::before,
+    .res-hero-text::before,
+    .ind-hero-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+        z-index: -1 !important;
     }
 }

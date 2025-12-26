@@ -230,13 +230,12 @@
             height: 100%;
             object-fit: cover;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 767px) {
             .home-hero,
             .comm-hero,
             .res-hero,
             .ind-hero {
                 display: flex;
-                flex-direction: column-reverse;
             }
             .home-hero-content,
             .comm-hero-content,
@@ -264,6 +263,50 @@
 
     <style>
         /* --- PAGE SPECIFIC STYLES --- */
+        
+        /* Sticky CTA Bar */
+        .sticky-cta-bar {
+            position: fixed;
+            bottom: 24px;
+            left: 0;
+            width: 100%;
+            z-index: 900;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }
+        .sticky-inner {
+            background: rgba(5,5,5,0.9);
+            border: 1px solid var(--border-dim);
+            padding: 10px 12px 10px 24px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            pointer-events: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+        }
+        .sticky-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .sticky-actions { display: flex; gap: 12px; }
+        .sticky-btn {
+            background: var(--lime);
+            color: #000;
+            padding: 10px 22px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0,255,65,0.4);
+        }
+        
         /* Comparison Section */
         .comparison-grid {
             display: grid;
@@ -629,6 +672,53 @@
             .gearhead-grid .kr8-img-card {
                 grid-column: 1 / -1 !important;
                 width: 100% !important;
+            }
+            
+            /* Set kr8-img-card eng-card-unified height to 265px on mobile */
+            .kr8-img-card.eng-card-unified {
+                height: 265px !important;
+                min-height: 265px !important;
+                max-height: 265px !important;
+            }
+            
+            /* Add padding to gearhead kr8-opt1-body text on mobile */
+            .gearhead-section .kr8-opt1-body.fw-300 {
+                padding: 0 10px !important;
+            }
+            
+            /* Set gap to 0px for elements-accordion-trigger on mobile */
+            .elements-accordion-trigger {
+                gap: 0px !important;
+            }
+            
+            /* Add padding to kr8-bg-video within zig-img on mobile */
+            .zig-img .kr8-bg-video {
+                padding: 0 15px !important;
+            }
+            
+            /* Change kr8-unified-block min-height to 66vh on mobile */
+            .kr8-unified-block {
+                min-height: 66vh !important;
+            }
+            
+            /* Center titles and subtext in eng-card-unified on mobile */
+            .kr8-img-card.eng-card-unified .kr8-meta {
+                text-align: center !important;
+                background: #000000 !important;
+                padding: 10px !important;
+                border-radius: 4px !important;
+            }
+            
+            .kr8-img-card.eng-card-unified .kr8-meta h4 {
+                text-align: center !important;
+                color: #ffffff !important;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+            }
+            
+            .kr8-img-card.eng-card-unified .kr8-meta p {
+                text-align: center !important;
+                color: #ffffff !important;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
             }
             .bento-content {
                 position: relative;
@@ -1209,7 +1299,7 @@
             </button>
 
             <a href="index.html" class="logo-link" aria-label="Evolve Surface Strategies">
-                <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="evolve-nav-logo" loading="lazy" decoding="async" width="600" height="509">
+                <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="evolve-nav-logo" decoding="async" width="600" height="509">
             </a>
 
             <nav class="nav-links nav-light">
@@ -1225,7 +1315,7 @@
                 </a>
             </nav>
 
-            <button onclick="openBookingModal()" class="header-cta">GET QUOTE</button>
+            <button onclick="openBookingModal()" class="header-cta">GET A<br>QUOTE</button>
         </header>
 
         <section class="res-hero">
@@ -1449,19 +1539,17 @@
                         </ul>
                     </div>
                     <div class="zig-img">
-                        <video autoplay muted loop playsinline loading="lazy" poster="images/residential/hardscape-poster.webp" class="kr8-bg-video">
-                            <source src="videos/hardscape.webm" type="video/webm">
-                            <source src="videos/hardscape.mp4" type="video/mp4">
-                        </video>
+<video autoplay muted loop playsinline poster="images/residential/hardscape-poster.webp" class="kr8-bg-video" preload="none" data-preload="defer">
+                                            <source src="videos/hardscape.mp4" type="video/mp4">
+                                        </video>
                     </div>
                 </div>
 
                 <div class="zig-row kr8-anim-item">
                     <div class="zig-img" style="order: -1;">
-                        <video autoplay muted loop playsinline loading="lazy" poster="images/residential/deck-poster.webp" class="kr8-bg-video">
-                            <source src="videos/deck.webm" type="video/webm">
-                            <source src="videos/deck.mp4" type="video/mp4">
-                        </video>
+<video autoplay muted loop playsinline poster="images/residential/deck-poster.webp" class="kr8-bg-video" preload="none" data-preload="defer">
+                                            <source src="videos/deck.mp4" type="video/mp4">
+                                        </video>
                     </div>
                     <div class="zig-content">
                         <div class="kr8-menu-header" style="padding: 0; border: none; margin-bottom: 20px;">
@@ -1495,10 +1583,9 @@
                         </ul>
                     </div>
                     <div class="zig-img">
-                        <video autoplay muted loop playsinline loading="lazy" poster="images/residential/pools-poster.webp" class="kr8-bg-video">
-                            <source src="videos/pools.webm" type="video/webm">
-                            <source src="videos/pools.mp4" type="video/mp4">
-                        </video>
+<video autoplay muted loop playsinline poster="images/residential/pools-poster.webp" class="kr8-bg-video" preload="none" data-preload="defer">
+                                            <source src="videos/pools.mp4" type="video/mp4">
+                                        </video>
                     </div>
                 </div>
             </div>
@@ -1657,19 +1744,19 @@
                     <div class="footer-col">
                         <h5 class="footer-title">CONTACT</h5>
                         <a href="tel:7809155471" class="footer-link">Phone: 780-915-5471</a>
-                        <span class="footer-link">Email: info@evolveprep.com</span>
+                        <span class="footer-link">Email: info@evolve.contractors</span>
                         <a class="footer-link" href="https://www.google.com/maps/search/?api=1&query=5947+92+St+NW,+Edmonton,+AB+T6E+3A5,+Canada">5947 92 St NW, Edmonton, AB T6E 3A5, Canada</a>
                     </div>
                     <div class="footer-col">
                         <h5 class="footer-title">SOCIAL</h5>
                         <div class="footer-social">
-                            <a class="footer-social-link" href="#" aria-label="Facebook">
+                            <a class="footer-social-link" href="#booking-modal" aria-label="Facebook">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"/></svg>
                             </a>
-                            <a class="footer-social-link" href="#" aria-label="Instagram">
+                            <a class="footer-social-link" href="#booking-modal" aria-label="Instagram">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
                             </a>
-                            <a class="footer-social-link" href="#" aria-label="LinkedIn">
+                            <a class="footer-social-link" href="#booking-modal" aria-label="LinkedIn">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                             </a>
                         </div>
@@ -1678,11 +1765,11 @@
                 <div class="footer-divider"></div>
                 <p class="footer-locations">Serving Edmonton, Sherwood Park, St. Albert, Spruce Grove & Greater Alberta.</p>
                 <div class="footer-bottom">
-                    <p class="footer-copy">&copy; 2024 EVOLVE ECO SURFACE PREP &amp; RESTORATION</p>
+                    <p class="footer-copy">&copy; 2025 EVOLVE ECO SURFACE PREP &amp; RESTORATION</p>
                     <div class="footer-legal">
                         <a class="footer-link" href="legal.html">PRIVACY</a>
                         <span class="footer-separator">/</span>
-                        <a class="footer-link" href="legal.html">TERMS</a>
+                        <a class="footer-link" href="legal.html">TERMS</a><span class="footer-separator">/</span><a class="footer-link" href="evolve-brand-bible.html">BRAND</a>
                     </div>
                 </div>
             </div>
@@ -1758,16 +1845,16 @@
                             </div>
                         </div>
                         
-                        <div class="evolve-input-group" style="margin-top: 24px;">
+                        <label class="question-label" style="margin-top: 24px;">Project Details</label>
+                        <div class="evolve-input-group">
                             <textarea id="project-details" class="evolve-input" placeholder="Describe what needs to be restored"></textarea>
                             <span class="input-icon">📝</span>
-                            <span class="input-label-top">Project Details</span>
                         </div>
                         
+                        <label class="question-label">Special Circumstances (Optional)</label>
                         <div class="evolve-input-group">
                             <textarea id="special-circumstances" class="evolve-input" placeholder="Any access issues, safety concerns, or special requirements we should know about?" style="min-height: 80px;"></textarea>
                             <span class="input-icon">⚠️</span>
-                            <span class="input-label-top">Special Circumstances (Optional)</span>
                         </div>
                         
                         <div style="margin-bottom: 24px;">
@@ -1815,7 +1902,25 @@
             </div>
         </div>
     </div>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6G4wmgSz6vViVmxmXANooNYgnL7aMsw&libraries=places&callback=initAutocomplete"></script>
+    <!-- Google Maps API - Optimized Loading -->
+    <script>
+        function loadGoogleMaps() {
+            if (window.googleMapsLoaded) return;
+            const script = document.createElement('script');
+            script.async = true;
+            script.defer = true;
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6G4wmgSz6vViVmxmXANooNYgnL7aMsw&libraries=places&callback=initAutocomplete';
+            script.onerror = function() {
+                console.warn('Google Maps API failed to load - autocomplete disabled');
+                window.initAutocomplete = function() {};
+            };
+            document.head.appendChild(script);
+            window.googleMapsLoaded = true;
+        }
+        window.addEventListener('load', function() {
+            setTimeout(loadGoogleMaps, 2000);
+        });
+    </script>
     <script src="assets/js/booking-wizard.js" defer></script>
 </body>
 </html>

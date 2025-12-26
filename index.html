@@ -246,13 +246,12 @@
             height: 100%;
             object-fit: cover;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 767px) {
             .home-hero,
             .comm-hero,
             .res-hero,
             .ind-hero {
                 display: flex;
-                flex-direction: column-reverse;
             }
             .home-hero-content,
             .comm-hero-content,
@@ -330,7 +329,6 @@
             </a>
 
             <nav class="nav-links nav-light">
-                <div class="menu-close-container"><button class="nav-close-btn" aria-label="Close Menu">✕ CLOSE MENU</button></div>
                 <a href="index.html" class="nav-item active">Home</a>
                 <a href="industrial.html" class="nav-item">Industrial</a>
                 <a href="commercial.html" class="nav-item">Commercial</a>
@@ -1032,7 +1030,10 @@
                 <div class="footer-top">
                     <div>
                         <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="footer-logo" loading="lazy" decoding="async" width="600" height="509">
-                        <p class="footer-tagline">Alberta's Premier Mobile Surface Prep, Steam Washing & Eco-Restoration Services.</p>
+                        <p class="footer-tagline">
+                            <span class="footer-tagline-line">Alberta's Premier Mobile Surface Prep,</span>
+                            <span class="footer-tagline-line">Steam Washing &amp; Eco-Restoration Services.</span>
+                        </p>
                     </div>
                     <button onclick="openBookingModal()" class="footer-cta">GET AN ESTIMATE</button>
                 </div>

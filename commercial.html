@@ -233,13 +233,12 @@
             height: 100%;
             object-fit: cover;
         }
-        @media (max-width: 991px) {
+        @media (max-width: 767px) {
             .home-hero,
             .comm-hero,
             .res-hero,
             .ind-hero {
                 display: flex;
-                flex-direction: column-reverse;
             }
             .home-hero-content,
             .comm-hero-content,
@@ -947,6 +946,16 @@
             .cta-banner {
                 margin-bottom: 0px !important;
             }
+            
+            /* Change comm-hero padding-bottom to 0px on mobile */
+            .comm-hero {
+                padding-bottom: 0px !important;
+            }
+            
+            /* Change cta-banner border-top to 0px solid on mobile */
+            .cta-banner {
+                border-top: 0px solid !important;
+            }
         }
         @media (max-width: 700px) {
             .sticky-inner { flex-direction: column; gap: 10px; padding: 12px 18px; }
@@ -978,7 +987,7 @@
             </button>
 
             <a href="index.html" class="logo-link" aria-label="Evolve Surface Strategies">
-                <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="evolve-nav-logo" loading="lazy" decoding="async" width="600" height="509">
+                <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="evolve-nav-logo" decoding="async" width="600" height="509">
             </a>
 
             <nav class="nav-links nav-light">
@@ -994,7 +1003,7 @@
                 </a>
             </nav>
 
-            <button onclick="openBookingModal()" class="header-cta">GET QUOTE</button>
+            <button onclick="openBookingModal()" class="header-cta">GET A<br>QUOTE</button>
         </header>
 
         <section class="comm-hero">
@@ -1260,13 +1269,6 @@
                             </ul>
                             <a href="#contact" class="kr8-dl-link" style="margin-top: 30px;">SCHEDULE A SITE WALK-THROUGH</a>
                         </div>
-                        <!--
-                        <h2 class="kr8-opt1-headline kr8-metal">PARTNERS IN<br>MAINTENANCE.</h2>
-                        <p class="fs-18 fw-300" style="color: #ccc; line-height: 1.6; margin-top: 20px;">
-                            We understand that downtime is revenue lost. That's why we offer after-hours and weekend scheduling to ensure your business keeps running while we work.
-                        </p>
-                        <a href="#contact" class="kr8-dl-link" style="margin-top: 30px;">SCHEDULE A SITE WALK-THROUGH</a>
-                        -->
                     </div>
                     
                     <div>
@@ -1295,7 +1297,7 @@
                     Send us photos of your project or schedule a site assessment. We provide fast, detailed quotes for commercial and industrial jobs.
                 </p>
                 <div class="cta-actions">
-                    <a href="mailto:info@evolveprep.com" class="kr8-btn primary">REQUEST COMMERCIAL ASSESSMENT</a>
+                    <a href="mailto:info@evolve.contractors" class="kr8-btn primary">REQUEST COMMERCIAL ASSESSMENT</a>
                     <a href="tel:7809155471" class="kr8-btn">CALL 780-915-5471</a>
                 </div>
             </div>
@@ -1328,19 +1330,19 @@
                     <div class="footer-col">
                         <h5 class="footer-title">CONTACT</h5>
                         <a href="tel:7809155471" class="footer-link">Phone: 780-915-5471</a>
-                        <a href="mailto:info@evolveprep.com" class="footer-link">Email: info@evolveprep.com</a>
+                        <a href="mailto:info@evolve.contractors" class="footer-link">Email: info@evolve.contractors</a>
                         <a class="footer-link" href="https://www.google.com/maps/search/?api=1&query=5947+92+St+NW,+Edmonton,+AB+T6E+3A5,+Canada">5947 92 St NW, Edmonton, AB T6E 3A5, Canada</a>
                     </div>
                     <div class="footer-col">
                         <h5 class="footer-title">SOCIAL</h5>
                         <div class="footer-social">
-                            <a class="footer-social-link" href="#" aria-label="Facebook">
+                            <a class="footer-social-link" href="#booking-modal" aria-label="Facebook">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"/></svg>
                             </a>
-                            <a class="footer-social-link" href="#" aria-label="Instagram">
+                            <a class="footer-social-link" href="#booking-modal" aria-label="Instagram">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
                             </a>
-                            <a class="footer-social-link" href="#" aria-label="LinkedIn">
+                            <a class="footer-social-link" href="#booking-modal" aria-label="LinkedIn">
                                 <svg class="footer-social-icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                             </a>
                         </div>
@@ -1352,11 +1354,11 @@
                 <p class="footer-locations">Serving Edmonton, Acheson, West Edmonton, Leduc & Greater Alberta.</p>
 
                 <div class="footer-bottom">
-                    <p class="footer-copy">&copy; 2024 EVOLVE ECO SURFACE PREP &amp; RESTORATION</p>
+                    <p class="footer-copy">&copy; 2025 EVOLVE ECO SURFACE PREP &amp; RESTORATION</p>
                     <div class="footer-legal">
                         <a class="footer-link" href="legal.html">PRIVACY</a>
                         <span class="footer-separator">/</span>
-                        <a class="footer-link" href="legal.html">TERMS</a>
+                        <a class="footer-link" href="legal.html">TERMS</a><span class="footer-separator">/</span><a class="footer-link" href="evolve-brand-bible.html">BRAND</a>
                     </div>
                 </div>
             </div>
@@ -1367,8 +1369,36 @@
     <script src="assets/js/scripts.js" defer></script>
 
     <!-- Global Booking Modal -->
-    <div class="booking-modal" id="booking-modal"><div class="modal-container"><button class="modal-close" aria-label="Close modal">✕</button><div class="modal-header"><h2 class="modal-title">Start Your Project</h2><p class="modal-subtitle">Tell us about your restoration. We'll handle the rest.</p></div><div class="modal-body"><div class="wizard-steps"><div class="step-indicator active"></div><div class="step-indicator"></div><div class="step-indicator"></div></div><form id="booking-form"><div class="wizard-step active" data-step="1"><label class="question-label">Project Type?</label><div class="option-grid" style="grid-template-columns: repeat(3, 1fr);"><div class="option-card" data-type="project" data-value="residential" onclick="selectOption('project', 'residential')"><div class="option-icon">🏠</div><h3 class="option-title">Residential</h3></div><div class="option-card" data-type="project" data-value="commercial" onclick="selectOption('project', 'commercial')"><div class="option-icon">🏢</div><h3 class="option-title">Commercial</h3></div><div class="option-card" data-type="project" data-value="industrial" onclick="selectOption('project', 'industrial')"><div class="option-icon">🏭</div><h3 class="option-title">Industrial</h3></div></div><label class="question-label" style="margin-top: 30px;">Timeline?</label><div class="option-grid"><div class="option-card" data-type="timeline" data-value="asap" onclick="selectOption('timeline', 'asap')"><div class="option-icon">⚡</div><h3 class="option-title">Emergency/ASAP</h3></div><div class="option-card" data-type="timeline" data-value="flexible" onclick="selectOption('timeline', 'flexible')"><div class="option-icon">📅</div><h3 class="option-title">Flexible</h3></div></div></div><div class="wizard-step" data-step="2"><div class="evolve-input-group"><input type="text" id="location-input" class="evolve-input" placeholder="Enter project address" required><span class="input-icon">📍</span><span class="input-label-top">Project Address</span></div><label class="question-label" style="margin-top: 24px;">How Should We Service This Job?</label><div class="option-grid" style="grid-template-columns: repeat(3, 1fr);"><div class="option-card" data-type="service" data-value="onsite" onclick="selectOption('service', 'onsite')"><div class="option-icon">🚐</div><h3 class="option-title">We Come to You</h3></div><div class="option-card" data-type="service" data-value="dropoff" onclick="selectOption('service', 'dropoff')"><div class="option-icon">📦</div><h3 class="option-title">You Drop Off</h3></div><div class="option-card" data-type="service" data-value="pickup" onclick="selectOption('service', 'pickup')"><div class="option-icon">🚛</div><h3 class="option-title">We Pick Up</h3></div></div><div class="evolve-input-group" style="margin-top: 24px;"><textarea id="project-details" class="evolve-input" placeholder="Describe what needs to be restored"></textarea><span class="input-icon">📝</span><span class="input-label-top">Project Details</span></div><div class="evolve-input-group"><textarea id="special-circumstances" class="evolve-input" placeholder="Any access issues, safety concerns, or special requirements we should know about?" style="min-height: 80px;"></textarea><span class="input-icon">⚠️</span><span class="input-label-top">Special Circumstances (Optional)</span></div><div style="margin-bottom: 24px;"><label class="question-label">Attach Photos (Max 5)</label><div class="upload-zone" id="drop-zone"><input type="file" id="file-input" multiple accept="image/*" style="display: none;"><div style="pointer-events: none;"><div class="upload-icon">☁️</div><p class="upload-text">Click or Drag photos here</p><p class="upload-subtext">JPG, PNG, WEBP (Max 5MB)</p></div></div><div class="preview-grid" id="preview-container"></div></div></div><div class="wizard-step" data-step="3"><div class="evolve-input-group"><input type="text" id="contact-name" class="evolve-input" placeholder="Your full name" required><span class="input-icon">👤</span><span class="input-label-top">Name</span></div><div class="evolve-input-group"><input type="tel" id="contact-phone" class="evolve-input" placeholder="Your phone number" required><span class="input-icon">📱</span><span class="input-label-top">Phone</span></div><div class="evolve-input-group"><input type="email" id="contact-email" class="evolve-input" placeholder="Your email address" required><span class="input-icon">✉️</span><span class="input-label-top">Email</span></div><p style="text-align: center; font-size: 14px; color: #39FF14; margin-top: 24px; font-weight: 500;">✓ Someone from our team will call you soon to discuss your project</p><p style="text-align: center; font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px;">Your data is secure. We usually respond within 2 hours.</p></div><div class="wizard-nav"><button type="button" class="wizard-btn wizard-btn-back" id="wizard-back">← Back</button><button type="button" class="wizard-btn wizard-btn-next" id="wizard-next" disabled>Next →</button><button type="submit" class="wizard-btn wizard-btn-submit" id="wizard-submit" style="display: none;">Get My Quote →</button></div></form></div></div></div>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6G4wmgSz6vViVmxmXANooNYgnL7aMsw&libraries=places&callback=initAutocomplete"></script>
+    <div class="booking-modal" id="booking-modal"><div class="modal-container"><button class="modal-close" aria-label="Close modal">✕</button><div class="modal-header"><h2 class="modal-title">Start Your Project</h2><p class="modal-subtitle">Tell us about your restoration. We'll handle the rest.</p></div><div class="modal-body"><div class="wizard-steps"><div class="step-indicator active"></div><div class="step-indicator"></div><div class="step-indicator"></div></div><form id="booking-form"><div class="wizard-step active" data-step="1"><label class="question-label">Project Type?</label><div class="option-grid" style="grid-template-columns: repeat(3, 1fr);"><div class="option-card" data-type="project" data-value="residential" onclick="selectOption('project', 'residential')"><div class="option-icon">🏠</div><h3 class="option-title">Residential</h3></div><div class="option-card" data-type="project" data-value="commercial" onclick="selectOption('project', 'commercial')"><div class="option-icon">🏢</div><h3 class="option-title">Commercial</h3></div><div class="option-card" data-type="project" data-value="industrial" onclick="selectOption('project', 'industrial')"><div class="option-icon">🏭</div><h3 class="option-title">Industrial</h3></div></div><label class="question-label" style="margin-top: 30px;">Timeline?</label><div class="option-grid"><div class="option-card" data-type="timeline" data-value="asap" onclick="selectOption('timeline', 'asap')"><div class="option-icon">⚡</div><h3 class="option-title">Emergency/ASAP</h3></div><div class="option-card" data-type="timeline" data-value="flexible" onclick="selectOption('timeline', 'flexible')"><div class="option-icon">📅</div><h3 class="option-title">Flexible</h3></div></div></div><div class="wizard-step" data-step="2"><div class="evolve-input-group"><input type="text" id="location-input" class="evolve-input" placeholder="Enter project address" required><span class="input-icon">📍</span><span class="input-label-top">Project Address</span></div><label class="question-label" style="margin-top: 24px;">How Should We Service This Job?</label><div class="option-grid" style="grid-template-columns: repeat(3, 1fr);"><div class="option-card" data-type="service" data-value="onsite" onclick="selectOption('service', 'onsite')"><div class="option-icon">🚐</div><h3 class="option-title">We Come to You</h3></div><div class="option-card" data-type="service" data-value="dropoff" onclick="selectOption('service', 'dropoff')"><div class="option-icon">📦</div><h3 class="option-title">You Drop Off</h3></div><div class="option-card" data-type="service" data-value="pickup" onclick="selectOption('service', 'pickup')"><div class="option-icon">🚛</div><h3 class="option-title">We Pick Up</h3></div></div>                        <label class="question-label" style="margin-top: 24px;">Project Details</label>
+                        <div class="evolve-input-group">
+                            <textarea id="project-details" class="evolve-input" placeholder="Describe what needs to be restored"></textarea>
+                            <span class="input-icon">📝</span>
+                        </div>
+
+                        <label class="question-label">Special Circumstances (Optional)</label>
+                        <div class="evolve-input-group">
+                            <textarea id="special-circumstances" class="evolve-input" placeholder="Any access issues, safety concerns, or special requirements we should know about?" style="min-height: 80px;"></textarea>
+                            <span class="input-icon">⚠️</span>
+                        </div><div style="margin-bottom: 24px;"><label class="question-label">Attach Photos (Max 5)</label><div class="upload-zone" id="drop-zone"><input type="file" id="file-input" multiple accept="image/*" style="display: none;"><div style="pointer-events: none;"><div class="upload-icon">☁️</div><p class="upload-text">Click or Drag photos here</p><p class="upload-subtext">JPG, PNG, WEBP (Max 5MB)</p></div></div><div class="preview-grid" id="preview-container"></div></div></div><div class="wizard-step" data-step="3"><div class="evolve-input-group"><input type="text" id="contact-name" class="evolve-input" placeholder="Your full name" required><span class="input-icon">👤</span><span class="input-label-top">Name</span></div><div class="evolve-input-group"><input type="tel" id="contact-phone" class="evolve-input" placeholder="Your phone number" required><span class="input-icon">📱</span><span class="input-label-top">Phone</span></div><div class="evolve-input-group"><input type="email" id="contact-email" class="evolve-input" placeholder="Your email address" required><span class="input-icon">✉️</span><span class="input-label-top">Email</span></div><p style="text-align: center; font-size: 14px; color: #39FF14; margin-top: 24px; font-weight: 500;">✓ Someone from our team will call you soon to discuss your project</p><p style="text-align: center; font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 8px;">Your data is secure. We usually respond within 2 hours.</p></div><div class="wizard-nav"><button type="button" class="wizard-btn wizard-btn-back" id="wizard-back">← Back</button><button type="button" class="wizard-btn wizard-btn-next" id="wizard-next" disabled>Next →</button><button type="submit" class="wizard-btn wizard-btn-submit" id="wizard-submit" style="display: none;">Get My Quote →</button></div></form></div></div></div>
+    <!-- Google Maps API - Optimized Loading -->
+    <script>
+        function loadGoogleMaps() {
+            if (window.googleMapsLoaded) return;
+            const script = document.createElement('script');
+            script.async = true;
+            script.defer = true;
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDr6G4wmgSz6vViVmxmXANooNYgnL7aMsw&libraries=places&callback=initAutocomplete';
+            script.onerror = function() {
+                console.warn('Google Maps API failed to load - autocomplete disabled');
+                window.initAutocomplete = function() {};
+            };
+            document.head.appendChild(script);
+            window.googleMapsLoaded = true;
+        }
+        window.addEventListener('load', function() {
+            setTimeout(loadGoogleMaps, 2000);
+        });
+    </script>
     <script src="assets/js/booking-wizard.js" defer></script>
 </body>
 </html>
