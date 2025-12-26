@@ -1278,6 +1278,18 @@
                 padding: 20px 0 !important;
             }
         }
+        
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .footer-tagline {
+                line-height: 1 !important;
+                white-space: pre-wrap;
+            }
+            
+            .footer-tagline br {
+                display: block;
+                margin: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1724,7 +1736,7 @@
                 <div class="footer-top">
                     <div>
                         <img src="images/logos/evolvelogo.webp" alt="Evolve Surface Strategies" class="footer-logo" loading="lazy" decoding="async" width="600" height="509">
-                        <p class="footer-tagline">Specializing in Dustless Driveway, Deck & Hardscape Restoration for Homeowners.</p>
+                        <p class="footer-tagline">Specializing in Dustless Driveway, Deck<br>& Hardscape Restoration for Homeowners.</p>
                     </div>
                     <button onclick="openBookingModal()" class="footer-cta" style="background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;">GET AN ESTIMATE</button>
                 </div>

@@ -7578,7 +7578,7 @@ button.footer-link:hover::after {
     
     /* Center footer text under Evolve logo with padding */
     .footer-tagline {
-        text-align: center !important;
+        text-align: left !important;
         padding: 0 20px !important;
         max-width: 280px !important;
         margin: 0 auto !important;
