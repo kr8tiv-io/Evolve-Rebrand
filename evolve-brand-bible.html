@@ -76,6 +76,17 @@
     line-height: 1.6;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("videos/noise.webp");
+    background-repeat: repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 100000;
+  }
+
   .anchor-profile {
     position: fixed;
     inset: 0;
@@ -116,12 +127,13 @@
     height: auto;
   }
 
-  .brand-mark strong {
+  .brand-mark div {
     display: block;
     font-size: 0.95rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--alloy-dim);
+    line-height: 1.0;
   }
 
   .mono {
@@ -130,6 +142,8 @@
     color: var(--alloy-dim);
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    padding-bottom: 10px;
+    line-height: 1.0;
   }
 
   .actions {
@@ -513,8 +527,31 @@
   }
 
   @media (max-width: 960px) {
+    main {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    .section:not(#overview) {
+      max-width: none !important;
+      width: calc(100% - 40px) !important;
+      padding: 20px 20px !important;
+      margin: 0 auto !important;
+    }
+    #toc {
+      margin: 0 auto !important;
+      padding: 20px 20px !important;
+    }
+    #overview.hero {
+      padding: 0 24px !important;
+    }
     .hero {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      justify-items: center;
+      text-align: center;
+      width: 100%;
     }
     .header-inner {
       grid-template-columns: 1fr;
@@ -528,6 +565,62 @@
     }
     .hero-image {
       min-height: 220px;
+    }
+    .hero-panel {
+      margin: 20px;
+      text-align: center;
+      padding: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: calc(100%);
+      max-width: 100%;
+      align-self: center;
+      position: relative;
+      left: 0;
+      right: 0;
+    }
+    .hero-title {
+      text-align: left !important;
+      font-size: calc(clamp(2.8rem, 5vw, 4.8rem) - 3px) !important;
+      padding: 0 2px !important;
+    }
+    .hero-subtitle {
+      text-align: left !important;
+      padding: 0 5px !important;
+    }
+    .hero-panel .mono {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--alloy-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.0;
+      padding-top: 10px;
+      padding-bottom: 4px;
+      text-align: center;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .grid-2 h1 {
+      font-size: calc(3rem - 7px) !important;
+    }
+    .type-sample {
+      padding-left: 5px !important;
+    }
+    footer .btn {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .brand-mark img {
+      display: none;
+    }
+    #visual-identity {
+      padding: 5px 5px;
     }
   }
 
@@ -567,7 +660,7 @@
   <main>
     <section class="section hero" id="overview">
       <div class="hero-panel">
-        <div class="mono">Identity, Narrative &amp; Design System</div>
+        <div class="mono">Identity, Narrative &<br>Design System</div>
         <div class="hero-actions-grid">
           <a class="btn btn-primary" href="evolve-brand-bible.html" download>Download Brand Bible</a>
           <a class="btn" href="images/logos/evolvelogo.webp" download>Download Logo</a>

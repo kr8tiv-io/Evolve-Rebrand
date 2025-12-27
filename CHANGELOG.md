@@ -1,5 +1,21 @@
 # Changelog
 
+## [Unreleased] - 2025-12-26
+
+### Changed
+- **Evolve Brand Bible Mobile Optimizations**:
+  - Updated all sections after Hero-Panel to use `calc(100% - 40px)` width with consistent padding
+  - Set Hero-Panel to full width (`calc(100%)`) on mobile
+  - Applied specific padding to TOC section (`20px 20px`) with centered alignment
+  - Set overview hero section padding to `0 24px`
+  - Left-aligned hero title with 7px font size reduction and 2px horizontal padding
+  - Left-aligned hero subtitle with 5px horizontal padding
+  - Added 10px top padding to mono text ("Identity, Narrative & Design System")
+  - Added line break after "narrative" in mono text with centered alignment
+  - Reduced "Precision. Preservation. Performance." font size by 7px in typography section
+  - Reduced type-sample left padding from 20px to 5px
+  - Stacked footer buttons vertically with 10px spacing and full width
+
 ## [Unreleased] - 2025-12-24
 
 ### Fixed
