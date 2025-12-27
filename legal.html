@@ -8,9 +8,9 @@
     <meta name="description" content="Terms, privacy, and service policies for EVOLVE ECO SURFACE PREP & RESTORATION.">
     <meta property="og:title" content="EVOLVE ECO SURFACE PREP & RESTORATION | Legal">
     <meta property="og:description" content="Terms, privacy, and service policies for EVOLVE ECO SURFACE PREP & RESTORATION.">
-    <meta property="og:image" content="https://www.evolution.contractors/images/logos/evolvelogo.webp">
+    <meta property="og:image" content="https://www.evolve.contractors/images/logos/evolvelogo.webp">
 
-    <link rel="canonical" href="https://www.evolution.contractors/legal.html">
+    <link rel="canonical" href="https://www.evolve.contractors/legal.html">
 
     <link rel="icon" type="image/x-icon" href="images/logos/favicon.ico">
     <link rel="icon" type="image/webp" href="images/logos/evolvelogo.webp">
@@ -23,11 +23,11 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://maps.googleapis.com">
     <link rel="dns-prefetch" href="https://maps.gstatic.com">
-    <link rel="preconnect" href="https://www.evolution.contractors" crossorigin>
-    <link rel="dns-prefetch" href="https://www.evolution.contractors">
+    <link rel="preconnect" href="https://www.evolve.contractors" crossorigin>
+    <link rel="dns-prefetch" href="https://www.evolve.contractors">
     <meta name="keywords" content="SSPC Standards, NACE Specifications, Vapor Blasting, Dustless Blasting, Industrial Compliance, OH&S Alberta, Plant Turnarounds, Safety Documentation, FLHA, SDS, Dry Ice Blasting, Mobile Fleet Washing">
-    <link rel="preload" as="style" href="assets/css/style.css" onload="this.onload=null;this.rel='stylesheet';document.documentElement.classList.remove('css-loading');document.querySelectorAll('.site-header[data-css-hide]').forEach(function(el){el.style.opacity='';el.style.visibility='';});">
-    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    <link rel="preload" as="style" href="assets/css/style.min.css" onload="this.onload=null;this.rel='stylesheet';document.documentElement.classList.remove('css-loading');document.querySelectorAll('.site-header[data-css-hide]').forEach(function(el){el.style.opacity='';el.style.visibility='';});">
+    <noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
     <style>
         /* CRITICAL: ABOVE-THE-FOLD */
         :root {
@@ -235,18 +235,29 @@
             .comm-hero,
             .res-hero,
             .ind-hero {
-                display: block;
+                display: flex;
             }
             .home-hero-content,
             .comm-hero-content,
             .res-hero-text,
             .ind-hero-content {
-                padding: 120px 24px 80px;
+                padding: 40px 24px 80px;
+            }
+            .home-hero-image,
+            .comm-hero-image,
+            .res-hero-img,
+            .ind-hero-img {
+                height: 60vh;
             }
             .hero-media-frame,
             .hero-img-unified {
-                min-height: 100vh;
-                height: 100vh;
+                min-height: 100%;
+                height: 100%;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .legal-header {
+                padding-top: 25px;
             }
         }
     </style>
@@ -355,6 +366,51 @@
             
             .legal-content h3 {
                 font-size: 18px;
+            }
+            
+            .legal-content ul {
+                margin: 14px 0 5px 5px;
+            }
+            
+            .legal-header {
+                margin-top: 60px;
+            }
+            
+            .legal-title {
+                padding-top: 20px;
+            }
+            
+            .mobile-toggle { 
+                display: block; 
+                background: none; 
+                border: none; 
+                z-index: 102; 
+                cursor: pointer; 
+            }
+            .mobile-toggle span { 
+                display: block; 
+                width: 30px; 
+                height: 2px; 
+                background: white; 
+                margin: 6px 0; 
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: #000;
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.4s;
+                z-index: 101;
+                padding: 60px 40px;
+                display: none !important;
+            }
+            .nav-links.active {
+                right: 0;
+                display: flex !important;
             }
         }
     </style>

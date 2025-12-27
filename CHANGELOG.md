@@ -1,5 +1,24 @@
 # Changelog
 
+## [Unreleased] - 2025-12-27
+
+### Added
+- LocalBusiness JSON-LD schema on the homepage for richer SEO.
+- AVIF image variants for hero/process/industrial/residential/commercial media and new OG background assets.
+- Bundled JS (`assets/js/app.bundle.js`) and minified CSS (`assets/css/style.min.css`) assets.
+
+### Changed
+- Canonical/OG URLs, sitemap, and robots entries updated to the `evolve.contractors` domain.
+- Expanded OG/Twitter metadata and refreshed page descriptions across main site templates.
+- Pages now preload the minified stylesheet and load the consolidated JS bundle.
+- Booking wizard now creates a mailto draft on submit and resets the modal state on load.
+- Mobile hero overlays, footer layout, and CTA spacing refined in the main stylesheet.
+- Footer social links anchor to the location section; contact email uses a mailto link.
+- Evolve directory templates updated for domain references and booking form label layout.
+
+### Fixed
+- Mobile nav close control wiring added to close the menu from its close button.
+
 ## [Unreleased] - 2025-12-26
 
 ### Changed

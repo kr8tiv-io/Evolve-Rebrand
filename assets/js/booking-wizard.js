@@ -56,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Booking modal element not found in DOM');
         return;
     }
+    
+    // Ensure modal starts closed (prevent flash on page load)
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
 
 // Close Modal
 function closeModal() {
@@ -246,11 +250,22 @@ function handleSubmit(e) {
         files: wizardState.files
     };
     
-    console.log('Form Data:', formData);
-    
-    // TODO: Send to backend/API
-    // For now, just show success and close
-    alert('Thank you! Your request has been submitted. We\'ll contact you within 2 hours.');
+    const bodyLines = [
+        `Project Type: ${formData.projectType || 'N/A'}`,
+        `Timeline: ${formData.timeline || 'N/A'}`,
+        `Service Type: ${formData.serviceType || 'N/A'}`,
+        `Address: ${formData.address || 'N/A'}`,
+        `Details: ${formData.details || 'N/A'}`,
+        `Special Circumstances: ${formData.specialCircumstances || 'N/A'}`,
+        `Name: ${formData.name || 'N/A'}`,
+        `Phone: ${formData.phone || 'N/A'}`,
+        `Email: ${formData.email || 'N/A'}`,
+        `Attachments Selected: ${formData.files.length}`
+    ];
+    const subject = encodeURIComponent('New Project Inquiry');
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:info@evolve.contractors?subject=${subject}&body=${body}`;
+    alert('Thanks! Your email client should now open with the project details.');
     closeModal();
 }
 
@@ -277,38 +292,3 @@ if (contactPhone) contactPhone.addEventListener('input', validateStep);
 if (contactEmail) contactEmail.addEventListener('input', validateStep);
 
 }); // End DOMContentLoaded
-
-// Google Maps Autocomplete (initialized after Maps API loads)
-window.initAutocomplete = function() {
-    // Check if Google Maps API is available
-    if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
-        console.warn('Google Maps API not loaded - autocomplete disabled');
-        return;
-    }
-    
-    const input = document.getElementById("location-input");
-    if (!input) {
-        console.warn('Location input not found');
-        return;
-    }
-    
-    const options = {
-        fields: ["formatted_address", "geometry", "name"],
-        strictBounds: false,
-    };
-
-    try {
-        const autocomplete = new google.maps.places.Autocomplete(input, options);
-
-        autocomplete.addListener("place_changed", () => {
-            const place = autocomplete.getPlace();
-            
-            if (place.geometry && place.geometry.location) {
-                input.style.borderColor = '#39FF14';
-                validateStep();
-            }
-        });
-    } catch (error) {
-        console.warn('Google Places Autocomplete failed:', error);
-    }
-}

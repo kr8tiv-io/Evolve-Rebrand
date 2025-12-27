@@ -13,6 +13,211 @@
         transition: opacity 0.3s ease;
     }
 
+/* === MOBILE HERO OVERLAY REBUILD === */
+/* === MOBILE: BELOW-HERO SPEED STABILITY (98% RULE) === */
+@media (max-width: 768px) {
+    section:not(.home-hero):not(.comm-hero):not(.ind-hero):not(.res-hero),
+    .kr8-unified-block:not(.home-hero):not(.comm-hero):not(.ind-hero):not(.res-hero),
+    .bento-section,
+    .bento-grid,
+    .kr8-opt1-grid .kr8-img-card:nth-child(5) {
+        background: rgba(7, 7, 7, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 18px !important;
+        box-sizing: border-box !important;
+    }
+
+    .home-hero,
+    .comm-hero,
+    .res-hero,
+    .ind-hero {
+        position: relative !important;
+        display: block !important;
+        min-height: 100vh !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .home-hero-image,
+    .comm-hero-image,
+    .res-hero-img,
+    .ind-hero-img {
+        position: relative !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+    }
+
+    .home-hero-image .hero-media-frame,
+    .comm-hero-image .hero-media-frame,
+    .res-hero-img .hero-media-frame,
+    .ind-hero-img .hero-media-frame {
+        height: 100% !important;
+    }
+
+    .home-hero-image .hero-img-unified,
+    .comm-hero-image .hero-img-unified,
+    .res-hero-img .hero-img-unified,
+    .ind-hero-img .hero-img-unified {
+        height: 100% !important;
+    }
+
+    .home-hero-content,
+    .comm-hero-content,
+    .res-hero-text,
+    .ind-hero-content {
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 32px 20px 28px !important;
+        background: linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(5,5,5,0.45) 40%, rgba(5,5,5,0.85) 100%) !important;
+        backdrop-filter: blur(14px) !important;
+        border-top: 1px solid rgba(255,255,255,0.1) !important;
+        z-index: 2 !important;
+        text-align: left !important;
+        order: initial !important;
+    }
+
+    .home-hero-content .hero-kicker-block,
+    .home-hero-content .hero-title-unified,
+    .comm-hero-content .hero-kicker-block,
+    .comm-hero-content .hero-title-unified,
+    .res-hero-text .hero-kicker-block,
+    .res-hero-text .hero-title-unified,
+    .ind-hero-content .hero-kicker-block,
+    .ind-hero-content .hero-title-unified {
+        text-align: left !important;
+        margin-bottom: 12px;
+    }
+
+    .home-hero-content .hero-intro-unified,
+    .comm-hero-content .hero-intro-unified,
+    .res-hero-text .hero-intro-unified,
+    .ind-hero-content .hero-intro-unified {
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: rgba(255,255,255,0.85);
+    }
+
+    .home-hero-content .hero-buttons,
+    .comm-hero-content .hero-buttons,
+    .res-hero-text .hero-buttons,
+    .ind-hero-content .hero-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+    }
+
+    .home-hero-content .hero-buttons .btn-primary,
+    .home-hero-content .hero-buttons .btn-secondary,
+    .comm-hero-content .hero-buttons .btn-primary,
+    .comm-hero-content .hero-buttons .btn-secondary,
+    .res-hero-text .hero-buttons .btn-primary,
+    .res-hero-text .hero-buttons .btn-secondary,
+    .ind-hero-content .hero-buttons .btn-primary,
+    .ind-hero-content .hero-buttons .btn-secondary {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+
+/* === UNIVERSAL FOOTER NORMALIZATION === */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .site-footer .footer-divider,
+    .site-footer .footer-grid,
+    .site-footer .footer-bottom,
+    .site-footer .footer-locations {
+        display: none !important;
+    }
+
+    .site-footer .footer-top {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 16px !important;
+    }
+
+    .site-footer .footer-brand {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .site-footer .footer-tagline {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .site-footer .footer-cta {
+        align-self: center !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-footer .footer-tagline-line {
+        display: none !important;
+    }
+
+    .site-footer .footer-tagline-mobile {
+        display: block !important;
+    }
+
+    .site-footer .footer-top {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 16px !important;
+    }
+
+    .site-footer .footer-brand {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .site-footer .footer-logo {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        transform: none !important;
+    }
+
+    .site-footer .footer-tagline {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 320px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .site-footer .footer-cta {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        align-self: center !important;
+    }
+
+    .site-footer .footer-divider {
+        display: none !important;
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .site-footer .footer-bottom {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .site-footer .footer-locations {
+        padding: 28px 0 20px !important;
+    }
+}
+
 /* === INDEX TABLET: NORMALIZE PICKUP & DROPOFF CARD === */
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -1252,13 +1457,12 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
 }
 
 /* Tablet-only: stack hero buttons full width (769px to 980px) */
-@media (min-width: 769px) and (max-width: 980px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .mobile-hero-content .hero-buttons {
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: stretch !important;
-        gap: 16px !important;
     }
     .mobile-hero-content .hero-buttons button,
     .mobile-hero-content .hero-buttons a {
@@ -1288,6 +1492,20 @@ padding: clamp(140px, 15vh, 180px) 70px 90px;
     /* GET A QUOTE REQUEST PICKUP title - left aligned */
     .kr8-cta-title {
         text-align: left !important;
+    }
+    
+    /* Index tablet: remove hero pseudo overlays */
+    body.index .home-hero-content::before,
+    body.index .home-hero-content::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* Commercial tablet: ensure secondary CTA button readable */
+    body.commercial-page .cta-actions .kr8-btn:not(.primary) {
+        color: #000 !important;
+        border-color: #000 !important;
+        background: rgba(255,255,255,0.95) !important;
     }
     
     /* Services section (MODERNISED SURFACE RESTORATION) - match width to card-frame */
@@ -3339,6 +3557,12 @@ pointer-events: none;
     justify-content: space-between;
     gap: 20px;
 }
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
 .footer-wordmark {
     font-family: var(--font-main);
     font-size: var(--fs-display-footer);
@@ -3359,6 +3583,12 @@ pointer-events: none;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
     max-width: 600px;
+}
+.footer-tagline-line {
+    display: block;
+}
+.footer-tagline-mobile {
+    display: none;
 }
 .footer-locations {
     margin: 0;
@@ -3509,11 +3739,23 @@ pointer-events: none;
     .mobile-toggle { display: block; background: none; border: none; z-index: 102; cursor: pointer; }
     .mobile-toggle span { display: block; width: 30px; height: 2px; background: white; margin: 6px 0; }
     .nav-links {
-        position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: #000;
-        flex-direction: column; justify-content: center; transition: 0.4s; z-index: 101;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #000;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s;
+        z-index: 101;
         padding: 60px 40px;
+        display: none !important;
     }
-    .nav-links.active { right: 0; }
+    .nav-links.active {
+        right: 0;
+        display: flex !important;
+    }
     
 }
 @media (max-width: 600px) {
@@ -7423,6 +7665,7 @@ button.footer-link:hover::after {
     .kr8-unified-overlay {
         background-image: url('../../images/backgrounds/background1-800.webp') !important;
     }
+}
 
 /* === TIGHTEN CTA TITLES (Desktop) === */
 @media (max-width: 640px) {
@@ -7551,13 +7794,13 @@ button.footer-link:hover::after {
     }
     
     /* Center logistics section content */
-    .kr8-opt1-headline:has("LOGISTICS SOLVED") {
+    body.industrial .kr8-opt1-headline {
         text-align: center !important;
     }
     
     /* Add margin-top to Request Rate Sheet button */
-    .kr8-btn.primary:has("REQUEST RATE SHEET"),
-    a.kr8-btn.primary[href="mailto:info@evolveprep.com"] {
+    body.industrial .kr8-btn.primary[href="mailto:info@evolve.contractors"],
+    body.industrial a.kr8-btn.primary[href="mailto:info@evolveprep.com"] {
         margin-top: 40px !important;
         display: block !important;
         text-align: center !important;

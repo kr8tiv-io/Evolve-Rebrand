@@ -3931,6 +3931,17 @@ textarea.evolve-input + .input-icon {
     .modal-container {
         max-height: 95vh;
     }
+    
+    /* Enforce centering on mobile textareas */
+    textarea.evolve-input:placeholder-shown {
+        text-align: center;
+    }
+    #project-details:placeholder-shown {
+        padding-top: 45px;
+    }
+    #special-circumstances:placeholder-shown {
+        padding-top: 25px;
+    }
 }
 
 /* For button elements with kr8-btn primary class */

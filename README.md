@@ -21,7 +21,7 @@ We deliver dustless vapor blasting, steam washing, and restoration for:
 
 ## 💻 The Digital Experience
 
-This repository hosts the static site for **evolution.contractors**, designed with our "Dark Mode" aesthetic:
+This repository hosts the static site for **evolve.contractors**, designed with our "Dark Mode" aesthetic:
 *   **Palette:** Boreal Void (`#0a0a0a`) & Aurora Neon (`#4ade80`).
 *   **Atmosphere:** A global noise overlay simulating the "Anchor Profile" of blasted steel.
 *   **Typography:** *Neue Montreal* (Architectural) & *JetBrains Mono* (Technical).

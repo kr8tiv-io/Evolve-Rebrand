@@ -151,10 +151,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // === 2. MOBILE MENU LOGIC ===
     const toggle = document.querySelector('.mobile-toggle');
     const nav = document.querySelector('.nav-links');
+    const navCloseBtn = document.querySelector('.nav-close-btn');
     
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
             nav.classList.toggle('active');
+        });
+    }
+    
+    // Close button inside mobile menu
+    if (navCloseBtn && nav) {
+        navCloseBtn.addEventListener('click', () => {
+            nav.classList.remove('active');
         });
     }
 
